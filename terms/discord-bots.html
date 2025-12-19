@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bots - Isolyr Labs</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="site-header">
+            <div class="brand">Isolyr Labs</div>
+            <nav class="site-nav">
+                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Language">
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <div class="lang-menu" role="menu">
+                        <button data-lang="en" role="menuitem">EN</button>
+                        <button data-lang="es" role="menuitem">ES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <header class="reveal visible">
+            <h1>Discord Bots</h1>
+            <p class="subtitle">Conditions, technical limits, and platform dependency.</p>
+            <p class="last-updated">Last updated: December 19, 2025</p>
+        </header>
+
+        <main class="document reveal">
+            <section class="reveal">
+                <h2>Use Conditions</h2>
+                <ul>
+                    <li>Use within Discord’s Terms and applicable server rules.</li>
+                    <li>No misuse for spam, abuse, or unauthorized data collection.</li>
+                    <li>Configuration and permissions must be granted explicitly by server administrators.</li>
+                </ul>
+            </section>
+
+            <section class="reveal">
+                <h2>Technical Limitations</h2>
+                <ul>
+                    <li>Subject to Discord API rate limits and platform outages.</li>
+                    <li>Features can change or pause if platform policies or limits shift.</li>
+                    <li>Data handled is minimized to what each command or feature needs.</li>
+                </ul>
+            </section>
+
+            <section class="reveal">
+                <h2>Third-Party Dependency</h2>
+                <p>Operation depends on Discord infrastructure, policies, and availability. Issues on Discord’s side can impact functionality outside Isolyr Labs’ control.</p>
+            </section>
+
+            <section class="reveal">
+                <a class="primary-link" href="/terms">← Back to Terms</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Isolyr Labs — All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="/terms" class="footer-link">Terms of Service</a>
+                <span class="dot-sep">•</span>
+                <a href="/privacy" class="footer-link">Privacy Policy</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="../script.js"></script>
+    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
+</body>
+</html>

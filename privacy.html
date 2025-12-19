@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Isolyr Labs</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="site-header">
+            <div class="brand">Isolyr Labs</div>
+            <nav class="site-nav">
+                <a href="index.html"><i data-feather="home"></i><span>Home</span></a>
+                <a href="products.html"><i data-feather="package"></i><span>Products</span></a>
+                <a href="terms.html"><i data-feather="file-text"></i><span>Terms</span></a>
+                <a href="privacy.html" class="active"><i data-feather="shield"></i><span>Privacy</span></a>
+                <a href="contact.html"><i data-feather="message-circle"></i><span>Contact</span></a>
+            </nav>
+        </div>
+        <header class="reveal visible">
             <h1>Privacy Policy</h1>
             <p class="subtitle">Isolyr Labs</p>
             <p class="last-updated">Last updated: December 19, 2025</p>
         </header>
 
-        <nav class="breadcrumb">
-            <a href="index.html">Home</a> / Privacy Policy
-        </nav>
+        
 
-        <main class="document">
-            <section>
+        <main class="document reveal">
+            <section class="reveal">
+                <h2>Introduction</h2>
+                <p>As a development laboratory, Isolyr Labs collects only the minimum data required for the operation and maintenance of its systems.</p>
+                <p>This policy describes what data is collected, how it is used, and the third-party services involved.</p>
+            </section>
+
+            <section class="reveal">
                 <h2>1. Data Collection</h2>
-                <p>Isolyr Labs collects only the data strictly necessary to provide and maintain our services. The specific data collected depends on which services you use:</p>
+                <p>The specific data collected depends on which services you use:</p>
                 <p><strong>Discord Bots:</strong></p>
                 <ul>
                     <li>User IDs and usernames (as provided by Discord)</li>
@@ -48,7 +63,7 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>2. Data Usage</h2>
                 <p>Data collected by Isolyr Labs is used exclusively for the following purposes:</p>
                 <ul>
@@ -66,7 +81,7 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>3. Third-Party Services</h2>
                 <p>Isolyr Labs services operate on or interact with third-party platforms. Data handling on these platforms is governed by their respective privacy policies:</p>
                 <p><strong>Discord:</strong></p>
@@ -88,7 +103,7 @@
                 <p>We encourage users to review the privacy policies of these third-party platforms.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>4. Data Storage</h2>
                 <p>Data storage practices vary by service:</p>
                 <ul>
@@ -100,7 +115,7 @@
                 <p>We implement reasonable security measures to protect stored data, but no storage system is completely secure.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>5. User Rights</h2>
                 <p>Depending on your jurisdiction and applicable laws, you may have the following rights:</p>
                 <ul>
@@ -109,27 +124,28 @@
                     <li><strong>Deletion:</strong> Request deletion of your data, subject to legal and operational constraints</li>
                     <li><strong>Objection:</strong> Object to certain types of data processing</li>
                 </ul>
-                <p>To exercise these rights, contact us at contact@isolyr.xyz. We will respond to legitimate requests within a reasonable timeframe.</p>
+                <p>To exercise these rights, contact Isolyr Labs via Discord. We will respond to legitimate requests within a reasonable timeframe.</p>
                 <p>Note that some data may be retained if required by law or necessary for service operation.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>6. Policy Changes</h2>
                 <p>Isolyr Labs reserves the right to modify this Privacy Policy at any time. Changes will be reflected on this page with an updated revision date.</p>
                 <p>Significant changes may be communicated through service announcements where feasible. Continued use of our services after changes constitutes acceptance of the updated policy.</p>
                 <p>We recommend reviewing this policy periodically to stay informed about how we protect your data.</p>
             </section>
 
-            <section>
-                <h2>7. Contact Information</h2>
-                <p>For questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact:</p>
-                <p><strong>Email:</strong> contact@isolyr.xyz</p>
+            <section class="reveal">
+                <h2>7. Contact</h2>
+                <p>All communication with Isolyr Labs regarding this Privacy Policy is handled exclusively through Discord.</p>
             </section>
         </main>
 
         <footer>
-            <p>&copy; Isolyr Labs. All rights reserved.</p>
+            <p>&copy; Isolyr Labs — All rights reserved.</p>
         </footer>
     </div>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
 </body>
 </html>

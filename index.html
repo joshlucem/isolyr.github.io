@@ -5,20 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isolyr Labs</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
+    <canvas class="fireflies-canvas"></canvas>
     <div class="container">
-        <header>
+        <div class="site-header">
+            <div class="brand">Isolyr Labs</div>
+            <nav class="site-nav">
+                <a href="index.html" class="active"><i data-feather="home"></i><span>Home</span></a>
+                <a href="products.html"><i data-feather="package"></i><span>Products</span></a>
+                <a href="terms.html"><i data-feather="file-text"></i><span>Terms</span></a>
+                <a href="privacy.html"><i data-feather="shield"></i><span>Privacy</span></a>
+                <a href="contact.html"><i data-feather="message-circle"></i><span>Contact</span></a>
+            </nav>
+        </div>
+        <header class="reveal visible">
             <h1>Isolyr Labs</h1>
-            <p class="subtitle">Independent digital tools and systems.</p>
+            <p class="subtitle">An independent development laboratory.</p>
         </header>
 
         <main>
-            <section class="intro">
-                <p>This website hosts the official legal documents governing the use of Discord bots, Minecraft plugins, and other digital services developed by Isolyr Labs.</p>
+            <section class="intro reveal">
+                <p>Isolyr Labs is an independent laboratory focused on the development and maintenance of digital systems. Our work includes Discord bots, Minecraft plugins, and experimental or contractual digital services.</p>
+                <p>Founded and maintained by an independent developer, Isolyr Labs operates as a controlled environment for design, iteration, and long-term maintenance.</p>
             </section>
 
-            <section class="policies">
+            <section class="policies reveal">
                 <h2>Official Documents</h2>
                 <nav class="policy-links">
                     <a href="terms.html" class="policy-link">
@@ -34,8 +47,11 @@
         </main>
 
         <footer>
-            <p>&copy; Isolyr Labs. All rights reserved.</p>
+            <p>&copy; Isolyr Labs — All rights reserved.</p>
         </footer>
+        
     </div>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
 </body>
 </html>

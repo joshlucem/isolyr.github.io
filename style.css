@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #e8e6e3;
-    background-color: #1a1614;
+    color: #24292f;
+    background-color: #f6f8fa;
 }
 
 .container {
@@ -24,43 +24,42 @@ header {
     text-align: center;
     margin-bottom: 40px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #3d3530;
+    border-bottom: 1px solid #d0d7de;
 }
 
 h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #f5f3f0;
+    color: #24292f;
     margin-bottom: 10px;
     letter-spacing: -0.5px;
 }
 
 .subtitle {
     font-size: 1.1rem;
-    color: #a39a8f;
+    color: #57606a;
     font-weight: 400;
 }
 
 .last-updated {
     font-size: 0.9rem;
-    color: #7a7269;
+    color: #57606a;
     margin-top: 10px;
 }
 
 .breadcrumb {
     margin-bottom: 30px;
     font-size: 0.9rem;
-    color: #a39a8f;
+    color: #57606a;
 }
 
 .breadcrumb a {
-    color: #c4b5a0;
+    color: #0969da;
     text-decoration: none;
 }
 
 .breadcrumb a:hover {
     text-decoration: underline;
-    color: #d4c5b0;
 }
 
 main {
@@ -75,9 +74,10 @@ main {
 
 .intro p {
     font-size: 1.05rem;
-    color: #c4b5a0;
-    max-width: 600px;
+    color: #24292f;
+    max-width: 680px;
     margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .policies {
@@ -86,7 +86,7 @@ main {
 
 .policies h2 {
     font-size: 1.4rem;
-    color: #f5f3f0;
+    color: #24292f;
     margin-bottom: 25px;
     text-align: center;
     font-weight: 500;
@@ -100,34 +100,34 @@ main {
 
 .policy-link {
     display: block;
-    padding: 30px;
-    background-color: #252220;
-    border: 1px solid #3d3530;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
     text-decoration: none;
     color: inherit;
-    transition: background-color 0.2s;
+    transition: border-color 0.2s;
 }
 
 .policy-link:hover {
-    background-color: #2d2925;
+    border-color: #cf222e;
 }
 
 .policy-link h3 {
     font-size: 1.3rem;
-    color: #f5f3f0;
+    color: #24292f;
     margin-bottom: 8px;
     font-weight: 500;
 }
 
 .policy-link p {
-    color: #a39a8f;
+    color: #57606a;
     font-size: 0.95rem;
 }
 
 .document {
-    background-color: #252220;
+    background-color: #ffffff;
     padding: 40px;
-    border: 1px solid #3d3530;
+    border: 1px solid #d0d7de;
     margin-bottom: 40px;
 }
 
@@ -137,7 +137,7 @@ main {
 
 .document h2 {
     font-size: 1.3rem;
-    color: #f5f3f0;
+    color: #24292f;
     margin-bottom: 15px;
     font-weight: 500;
 }
@@ -157,15 +157,58 @@ main {
 }
 
 .document strong {
-    color: #f5f3f0;
+    color: #24292f;
+    font-weight: 600;
+}
+
+.contact-section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 1.4rem;
+    color: #24292f;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.contact-section p {
+    font-size: 1.05rem;
+    color: #57606a;
+    max-width: 680px;
+    margin: 0 auto 30px;
+}
+
+.discord-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #cf222e;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 30px;
+}
+
+.discord-button:hover {
+    background-color: #a40e26;
+}
+
+.discord-widget {
+    max-width: 350px;
+    margin: 0 auto;
+    border: 1px solid #d0d7de;
 }
 
 footer {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid #3d3530;
+    border-top: 1px solid #d0d7de;
     margin-top: auto;
-    color: #7a7269;
+    color: #57606a;
     font-size: 0.9rem;
 }
 

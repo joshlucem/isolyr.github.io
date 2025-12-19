@@ -940,6 +940,7 @@ footer p {
     -webkit-backdrop-filter: var(--blur-sm);
     transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     animation: fadeIn 0.4s ease backwards;
+    scroll-margin-top: 120px;
 }
 .member-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--accent); }
 .member-avatar { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); background: rgba(255, 59, 48, 0.1); flex: 0 0 auto; }

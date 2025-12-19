@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization - Isolyr Labs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="site-header">
+            <div class="brand">Isolyr Labs</div>
+            <nav class="site-nav">
+                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                <a href="/organization" class="active"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Language">
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <div class="lang-menu" role="menu">
+                        <button data-lang="en" role="menuitem">EN</button>
+                        <button data-lang="es" role="menuitem">ES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <header class="reveal visible">
+            <h1 data-i18n="org_title">Organization</h1>
+            <p class="subtitle" data-i18n="org_subtitle">Structure, responsibilities, and operating model.</p>
+        </header>
+
+        <main class="document reveal">
+            <section>
+                <h2 data-i18n="org_operating_principles">Operating Principles</h2>
+                <ul>
+                    <li data-i18n="org_principle1">Independent and capacity-driven work</li>
+                    <li data-i18n="org_principle2">Intentional iteration and maintenance</li>
+                    <li data-i18n="org_principle3">Security-conscious and minimal data collection</li>
+                </ul>
+            </section>
+            <section>
+                <h2 data-i18n="org_structure_title">Structure</h2>
+                <p data-i18n="org_structure_text">Isolyr Labs is maintained by a single operator. Collaboration is limited and contractual when necessary.</p>
+            </section>
+            <section>
+                <h2 data-i18n="org_contact_policy_title">Contact Policy</h2>
+                <p data-i18n="org_contact_policy_text">Discord is the only communication channel. Requests are processed asynchronously.</p>
+            </section>
+
+            <section class="org-members reveal">
+                <h2 class="org-members-title" data-i18n="org_members_title">Members</h2>
+                <div class="members-grid">
+                    <article class="member-card">
+                        <div class="member-avatar" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+                            </svg>
+                        </div>
+                        <div class="member-content">
+                            <h3 class="member-name">Josh Lucem</h3>
+                            <p class="member-role" data-i18n="org_member_josh_role">Founder · Systems & Direction</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Isolyr Labs — All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="/terms" class="footer-link">Terms of Service</a>
+                <span class="dot-sep">•</span>
+                <a href="/privacy" class="footer-link">Privacy Policy</a>
+            </nav>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

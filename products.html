@@ -12,17 +12,25 @@
         <div class="site-header">
             <div class="brand">Isolyr Labs</div>
             <nav class="site-nav">
-                <a href="/"><i data-feather="home"></i><span>Home</span></a>
-                <a href="/products" class="active"><i data-feather="package"></i><span>Products</span></a>
-                <a href="/terms"><i data-feather="file-text"></i><span>Terms</span></a>
-                <a href="/privacy"><i data-feather="shield"></i><span>Privacy</span></a>
-                <a href="/contact"><i data-feather="message-circle"></i><span>Contact</span></a>
+                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                <a href="/products" class="active"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
             </nav>
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Language">
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <div class="lang-menu" role="menu">
+                        <button data-lang="en" role="menuitem">EN</button>
+                        <button data-lang="es" role="menuitem">ES</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <header class="reveal visible">
-            <h1>Products</h1>
-            <p class="subtitle">Laboratory projects and systems.</p>
+            <h1 data-i18n="products_title">Products</h1>
+            <p class="subtitle" data-i18n="products_subtitle">Laboratory projects and systems.</p>
         </header>
 
         <main class="document reveal">
@@ -31,10 +39,10 @@
                     <div class="category-icon">
                         <i data-feather="message-circle"></i>
                     </div>
-                    <h2>Discord</h2>
-                    <p>Discord bots and automation tools</p>
+                    <h2 data-i18n="products_cat_discord">Discord</h2>
+                    <p data-i18n="products_cat_discord_desc">Discord bots and automation tools</p>
                     <a href="/products/discord" class="category-link">
-                        <span>Explore</span>
+                        <span data-i18n="products_explore">Explore</span>
                         <i data-feather="arrow-right"></i>
                     </a>
                 </div>
@@ -43,10 +51,10 @@
                     <div class="category-icon">
                         <i data-feather="layers"></i>
                     </div>
-                    <h2>Minecraft</h2>
-                    <p>Minecraft server plugins and tools</p>
+                    <h2 data-i18n="products_cat_minecraft">Minecraft</h2>
+                    <p data-i18n="products_cat_minecraft_desc">Minecraft server plugins and tools</p>
                     <a href="/products/mc-plugins" class="category-link">
-                        <span>Explore</span>
+                        <span data-i18n="products_explore">Explore</span>
                         <i data-feather="arrow-right"></i>
                     </a>
                 </div>
@@ -55,9 +63,14 @@
 
         <footer>
             <p>&copy; Isolyr Labs — All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="/terms" class="footer-link">Terms of Service</a>
+                <span class="dot-sep">•</span>
+                <a href="/privacy" class="footer-link">Privacy Policy</a>
+            </nav>
         </footer>
     </div>
     <script src="script.js"></script>
-    <script>feather.replace();</script>
+    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
 </body>
 </html>

@@ -13,45 +13,62 @@
         <div class="site-header">
             <div class="brand">Isolyr Labs</div>
             <nav class="site-nav">
-                <a href="/" class="active"><i data-feather="home"></i><span>Home</span></a>
-                <a href="/products"><i data-feather="package"></i><span>Products</span></a>
-                <a href="/terms"><i data-feather="file-text"></i><span>Terms</span></a>
-                <a href="/privacy"><i data-feather="shield"></i><span>Privacy</span></a>
-                <a href="/contact"><i data-feather="message-circle"></i><span>Contact</span></a>
+                <a href="/" class="active"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
             </nav>
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Language">
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <div class="lang-menu" role="menu">
+                        <button data-lang="en" role="menuitem">EN</button>
+                        <button data-lang="es" role="menuitem">ES</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <header class="reveal visible">
             <h1>Isolyr Labs</h1>
-            <p class="subtitle">An independent development laboratory.</p>
+            <p class="subtitle" data-i18n="home_subtitle">An independent development laboratory.</p>
         </header>
 
         <main>
             <section class="intro reveal">
-                <p>Isolyr Labs is an independent laboratory focused on the development and maintenance of digital systems. Our work includes Discord bots, Minecraft plugins, and experimental or contractual digital services.</p>
-                <p>Founded and maintained by an independent developer, Isolyr Labs operates as a controlled environment for design, iteration, and long-term maintenance.</p>
+                <p data-i18n="home_intro1">Isolyr Labs is an independent laboratory focused on the development and maintenance of digital systems. Our work includes Discord bots, Minecraft plugins, and experimental or contractual digital services.</p>
+                <p data-i18n="home_intro2">Founded and maintained by an independent developer, Isolyr Labs operates as a controlled environment for design, iteration, and long-term maintenance.</p>
             </section>
 
-            <section class="policies reveal">
-                <h2>Official Documents</h2>
-                <nav class="policy-links">
-                    <a href="/terms" class="policy-link">
-                        <h3>Terms of Service</h3>
-                        <p>Rules and conditions for using our services</p>
-                    </a>
-                    <a href="/privacy" class="policy-link">
-                        <h3>Privacy Policy</h3>
-                        <p>How we handle and protect your information</p>
-                    </a>
-                </nav>
+            <section class="faq reveal">
+                <h2 data-i18n="faq_title">FAQ</h2>
+                <div class="faq-list">
+                    <details>
+                        <summary data-i18n="faq_q1">What is Isolyr Labs?</summary>
+                        <p data-i18n="faq_a1">Isolyr Labs is an independent development laboratory focused on digital systems. Work is structured, intentional, and long-term.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq_q2">What services are provided?</summary>
+                        <p data-i18n="faq_a2">Discord bots, Minecraft plugins, and experimental systems. Contractual work is considered selectively.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq_q3">How does contact work?</summary>
+                        <p data-i18n="faq_a3">Discord is the only channel. Communication is asynchronous and capacity-driven.</p>
+                    </details>
+                </div>
             </section>
         </main>
 
         <footer>
             <p>&copy; Isolyr Labs — All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="/terms" class="footer-link">Terms of Service</a>
+                <span class="dot-sep">•</span>
+                <a href="/privacy" class="footer-link">Privacy Policy</a>
+            </nav>
         </footer>
         
     </div>
     <script src="script.js"></script>
-    <script>feather.replace();</script>
+    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
 </body>
 </html>

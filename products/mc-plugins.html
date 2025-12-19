@@ -12,34 +12,42 @@
         <div class="site-header">
             <div class="brand">Isolyr Labs</div>
             <nav class="site-nav">
-                <a href="/"><i data-feather="home"></i><span>Home</span></a>
-                <a href="/products" class="active"><i data-feather="package"></i><span>Products</span></a>
-                <a href="/terms"><i data-feather="file-text"></i><span>Terms</span></a>
-                <a href="/privacy"><i data-feather="shield"></i><span>Privacy</span></a>
-                <a href="/contact"><i data-feather="message-circle"></i><span>Contact</span></a>
+                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                <a href="/products" class="active"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
             </nav>
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Language">
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <div class="lang-menu" role="menu">
+                        <button data-lang="en" role="menuitem">EN</button>
+                        <button data-lang="es" role="menuitem">ES</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <header class="reveal visible">
-            <h1>Minecraft Plugins</h1>
-            <p class="subtitle">Minecraft server plugins and tools.</p>
+            <h1 data-i18n="mc_title">Minecraft Plugins</h1>
+            <p class="subtitle" data-i18n="mc_subtitle">Minecraft server plugins and tools.</p>
         </header>
 
         <main class="document reveal">
             <div class="breadcrumb">
-                <a href="/products">← Back to Products</a>
+                <a href="/products" data-i18n="breadcrumb_back">← Back to Products</a>
             </div>
 
             <section class="products-list">
                 <div class="product-card large">
                     <div class="product-icon">
-                        <i data-feather="radio"></i>
+                        <i data-feather="rss"></i>
                     </div>
                     <h2>AirwaveChat</h2>
-                    <p class="product-tagline">Realistic radio communication for your Minecraft server</p>
+                    <p class="product-tagline" data-i18n="airwavechat_tagline">Realistic radio communication for your Minecraft server</p>
                     
                     <div class="product-description">
-                        <h3>Features</h3>
+                        <h3 data-i18n="airwavechat_features_title">Features</h3>
                         
                         <h4>Frequency System</h4>
                         <ul>
@@ -103,9 +111,14 @@
 
         <footer>
             <p>&copy; Isolyr Labs — All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="/terms" class="footer-link">Terms of Service</a>
+                <span class="dot-sep">•</span>
+                <a href="/privacy" class="footer-link">Privacy Policy</a>
+            </nav>
         </footer>
     </div>
     <script src="../script.js"></script>
-    <script>feather.replace();</script>
+    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
 </body>
 </html>

@@ -12,12 +12,20 @@
         <div class="site-header">
             <div class="brand">Isolyr Labs</div>
             <nav class="site-nav">
-                <a href="/"><i data-feather="home"></i><span>Home</span></a>
-                <a href="/products"><i data-feather="package"></i><span>Products</span></a>
-                <a href="/terms"><i data-feather="file-text"></i><span>Terms</span></a>
-                <a href="/privacy" class="active"><i data-feather="shield"></i><span>Privacy</span></a>
-                <a href="/contact"><i data-feather="message-circle"></i><span>Contact</span></a>
+                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
             </nav>
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Language">
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <div class="lang-menu" role="menu">
+                        <button data-lang="en" role="menuitem">EN</button>
+                        <button data-lang="es" role="menuitem">ES</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <header class="reveal visible">
             <h1>Privacy Policy</h1>
@@ -25,127 +33,94 @@
             <p class="last-updated">Last updated: December 19, 2025</p>
         </header>
 
-        
-
         <main class="document reveal">
             <section class="reveal">
-                <h2>Introduction</h2>
-                <p>As a development laboratory, Isolyr Labs collects only the minimum data required for the operation and maintenance of its systems.</p>
-                <p>This policy describes what data is collected, how it is used, and the third-party services involved.</p>
+                <h2>Overview</h2>
+                <p>Isolyr Labs collects only the data needed to operate, maintain, and secure its systems. This page is the primary policy and links to concise companion documents for specific topics.</p>
+                <p>Our goals are clarity, minimal data collection, and controlled use. We avoid legal clutter and state plainly what happens with your data.</p>
             </section>
 
             <section class="reveal">
-                <h2>1. Data Collection</h2>
-                <p>The specific data collected depends on which services you use:</p>
-                <p><strong>Discord Bots:</strong></p>
+                <h2>Scope</h2>
                 <ul>
-                    <li>User IDs and usernames (as provided by Discord)</li>
-                    <li>Server IDs and server metadata</li>
-                    <li>Message content when required for bot functionality</li>
-                    <li>Command usage and interaction data</li>
-                </ul>
-                <p><strong>Minecraft Plugins:</strong></p>
-                <ul>
-                    <li>Player UUIDs and usernames (as provided by Mojang)</li>
-                    <li>In-game actions and statistics relevant to plugin functionality</li>
-                    <li>Server configuration data</li>
-                </ul>
-                <p><strong>Custom Contracted Services:</strong></p>
-                <ul>
-                    <li>Data collection is defined on a per-contract basis</li>
-                    <li>Only data essential to service delivery is collected</li>
-                </ul>
-                <p><strong>Technical Metadata:</strong></p>
-                <ul>
-                    <li>Timestamps of interactions</li>
-                    <li>Error logs and diagnostic information</li>
-                    <li>Service usage patterns for performance optimization</li>
+                    <li>Applies to Isolyr Labs services: Discord bots, Minecraft plugins, experimental systems, and contracted work.</li>
+                    <li>Covers data we collect, use, store, or share while delivering those services.</li>
+                    <li>Complementary pages expand on each topic for transparency and quick reference.</li>
                 </ul>
             </section>
 
             <section class="reveal">
-                <h2>2. Data Usage</h2>
-                <p>Data collected by Isolyr Labs is used exclusively for the following purposes:</p>
+                <h2>How to Use These Pages</h2>
+                <p>Use the index below to jump to the focused documents. Each page is short, specific, and avoids repetition.</p>
+            </section>
+
+            <section class="reveal">
+                <h2>Privacy Index</h2>
+                <div class="policy-links-grid">
+                    <a class="policy-card" href="/privacy/data-collection">
+                        <div class="policy-card-top">
+                            <span class="policy-eyebrow">Data Collection</span>
+                            <span class="policy-chevron">→</span>
+                        </div>
+                        <p>What we collect, when we collect it, and what we do not collect.</p>
+                    </a>
+                    <a class="policy-card" href="/privacy/data-usage">
+                        <div class="policy-card-top">
+                            <span class="policy-eyebrow">Data Usage</span>
+                            <span class="policy-chevron">→</span>
+                        </div>
+                        <p>How data is used to operate services and what is explicitly excluded.</p>
+                    </a>
+                    <a class="policy-card" href="/privacy/data-storage">
+                        <div class="policy-card-top">
+                            <span class="policy-eyebrow">Data Storage</span>
+                            <span class="policy-chevron">→</span>
+                        </div>
+                        <p>Where data lives, how long it stays, and protections in place.</p>
+                    </a>
+                    <a class="policy-card" href="/privacy/data-sharing">
+                        <div class="policy-card-top">
+                            <span class="policy-eyebrow">Data Sharing</span>
+                            <span class="policy-chevron">→</span>
+                        </div>
+                        <p>When data is shared, with whom, and what never happens.</p>
+                    </a>
+                    <a class="policy-card" href="/privacy/scope-and-exclusions">
+                        <div class="policy-card-top">
+                            <span class="policy-eyebrow">When This Policy Does Not Apply</span>
+                            <span class="policy-chevron">→</span>
+                        </div>
+                        <p>Third-party platforms, separate contracts, and what falls outside this policy.</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="reveal">
+                <h2>Baseline Commitments</h2>
                 <ul>
-                    <li>Providing the core functionality of our services</li>
-                    <li>Maintaining and improving service performance</li>
-                    <li>Debugging and resolving technical issues</li>
-                    <li>Preventing abuse, fraud, or malicious activity</li>
-                    <li>Complying with legal obligations when required</li>
-                </ul>
-                <p><strong>We explicitly do not:</strong></p>
-                <ul>
-                    <li>Sell user data to third parties</li>
-                    <li>Use data for advertising or marketing purposes</li>
-                    <li>Share data with third parties except as described in this policy</li>
+                    <li>No data sales. No advertising use.</li>
+                    <li>Only collect what is necessary for the service to function or to secure it.</li>
+                    <li>Retain data only as long as needed for the stated purpose.</li>
+                    <li>Use reputable platforms and apply reasonable safeguards; no system is perfectly secure.</li>
                 </ul>
             </section>
 
             <section class="reveal">
-                <h2>3. Third-Party Services</h2>
-                <p>Isolyr Labs services operate on or interact with third-party platforms. Data handling on these platforms is governed by their respective privacy policies:</p>
-                <p><strong>Discord:</strong></p>
-                <ul>
-                    <li>Our Discord bots access user and server data through Discord's API</li>
-                    <li>Discord's Privacy Policy applies to data stored on Discord's servers</li>
-                    <li>We have no control over Discord's data handling practices</li>
-                </ul>
-                <p><strong>Minecraft / Mojang:</strong></p>
-                <ul>
-                    <li>Player data (UUIDs, usernames) is provided by Mojang's authentication system</li>
-                    <li>Mojang's Privacy Policy governs this data</li>
-                </ul>
-                <p><strong>GitHub and Development Platforms:</strong></p>
-                <ul>
-                    <li>Used for code hosting, version control, and collaboration</li>
-                    <li>Subject to their respective privacy policies</li>
-                </ul>
-                <p>We encourage users to review the privacy policies of these third-party platforms.</p>
-            </section>
-
-            <section class="reveal">
-                <h2>4. Data Storage</h2>
-                <p>Data storage practices vary by service:</p>
-                <ul>
-                    <li>Most data is stored temporarily in memory and not persisted to disk</li>
-                    <li>Persistent data (such as user preferences or configurations) is stored securely</li>
-                    <li>Logs and diagnostic data are retained only as long as necessary for troubleshooting</li>
-                    <li>Data is not retained longer than required for its intended purpose</li>
-                </ul>
-                <p>We implement reasonable security measures to protect stored data, but no storage system is completely secure.</p>
-            </section>
-
-            <section class="reveal">
-                <h2>5. User Rights</h2>
-                <p>Depending on your jurisdiction and applicable laws, you may have the following rights:</p>
-                <ul>
-                    <li><strong>Access:</strong> Request information about what data we hold about you</li>
-                    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
-                    <li><strong>Deletion:</strong> Request deletion of your data, subject to legal and operational constraints</li>
-                    <li><strong>Objection:</strong> Object to certain types of data processing</li>
-                </ul>
-                <p>To exercise these rights, contact Isolyr Labs via Discord. We will respond to legitimate requests within a reasonable timeframe.</p>
-                <p>Note that some data may be retained if required by law or necessary for service operation.</p>
-            </section>
-
-            <section class="reveal">
-                <h2>6. Policy Changes</h2>
-                <p>Isolyr Labs reserves the right to modify this Privacy Policy at any time. Changes will be reflected on this page with an updated revision date.</p>
-                <p>Significant changes may be communicated through service announcements where feasible. Continued use of our services after changes constitutes acceptance of the updated policy.</p>
-                <p>We recommend reviewing this policy periodically to stay informed about how we protect your data.</p>
-            </section>
-
-            <section class="reveal">
-                <h2>7. Contact</h2>
-                <p>All communication with Isolyr Labs regarding this Privacy Policy is handled exclusively through Discord.</p>
+                <h2>Contact and Requests</h2>
+                <p>All communication regarding privacy is handled through Discord. You can ask what data we hold, request corrections, or request deletion where allowed.</p>
             </section>
         </main>
 
         <footer>
             <p>&copy; Isolyr Labs — All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="/terms" class="footer-link">Terms of Service</a>
+                <span class="dot-sep">•</span>
+                <a href="/privacy" class="footer-link">Privacy Policy</a>
+            </nav>
         </footer>
     </div>
     <script src="script.js"></script>
-    <script>feather.replace();</script>
+    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
 </body>
 </html>

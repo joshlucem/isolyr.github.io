@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Isolyr Labs</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="site-header">
+            <div class="brand">Isolyr Labs</div>
+            <nav class="site-nav">
+                <a href="index.html"><i data-feather="home"></i><span>Home</span></a>
+                <a href="products.html"><i data-feather="package"></i><span>Products</span></a>
+                <a href="terms.html" class="active"><i data-feather="file-text"></i><span>Terms</span></a>
+                <a href="privacy.html"><i data-feather="shield"></i><span>Privacy</span></a>
+                <a href="contact.html"><i data-feather="message-circle"></i><span>Contact</span></a>
+            </nav>
+        </div>
+        <header class="reveal visible">
             <h1>Terms of Service</h1>
             <p class="subtitle">Isolyr Labs</p>
             <p class="last-updated">Last updated: December 19, 2025</p>
         </header>
 
-        <nav class="breadcrumb">
-            <a href="index.html">Home</a> / Terms of Service
-        </nav>
+        
 
-        <main class="document">
-            <section>
+        <main class="document reveal">
+            <section class="reveal">
                 <h2>1. Introduction</h2>
-                <p>These Terms of Service govern your use of all digital products and services provided by Isolyr Labs. By using our services, you acknowledge that you have read, understood, and agree to be bound by these terms.</p>
-                <p>Isolyr Labs operates as an independent organization founded and managed by an individual owner. These terms constitute a legally binding agreement between you and Isolyr Labs.</p>
+                <p>Isolyr Labs operates as an independent development laboratory. All services are provided on an experimental and technical basis, unless explicitly stated otherwise under a separate contract.</p>
+                <p>By using any service developed or maintained by Isolyr Labs, you acknowledge that you have read, understood, and agree to be bound by these terms.</p>
+                <p>Isolyr Labs was founded and is maintained by its original developer.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>2. Scope of Services</h2>
                 <p>These Terms of Service apply to all services developed, published, and maintained by Isolyr Labs, including but not limited to:</p>
                 <ul>
@@ -36,7 +46,7 @@
                 <p>Additional terms may apply to specific services as outlined in separate agreements or service-specific documentation.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>3. User Responsibilities</h2>
                 <p>When using Isolyr Labs services, you agree to:</p>
                 <ul>
@@ -50,13 +60,13 @@
                 <p>Violation of these responsibilities may result in immediate termination of access to our services.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>4. Intellectual Property</h2>
                 <p>All intellectual property rights in Isolyr Labs services, including but not limited to source code, design, branding, documentation, and associated materials, remain the exclusive property of Isolyr Labs and its owner.</p>
                 <p>You are granted a limited, non-exclusive, non-transferable license to use our services as intended. This license does not grant you any ownership rights or permission to modify, copy, or create derivative works.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>5. Service Availability</h2>
                 <p>Isolyr Labs services are provided on an "as is" and "as available" basis. We make no guarantees regarding:</p>
                 <ul>
@@ -68,7 +78,7 @@
                 <p>We reserve the right to modify, suspend, or discontinue any service at any time without prior notice or liability.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>6. Termination</h2>
                 <p>We reserve the right to terminate or suspend your access to our services at any time, with or without cause, and without prior notice. Reasons for termination may include, but are not limited to:</p>
                 <ul>
@@ -80,7 +90,7 @@
                 <p>Upon termination, your right to use our services ceases immediately.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>7. Limitation of Liability</h2>
                 <p>To the maximum extent permitted by applicable law, Isolyr Labs and its owner shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from:</p>
                 <ul>
@@ -93,21 +103,22 @@
                 <p>You acknowledge that you use our services at your own risk.</p>
             </section>
 
-            <section>
+            <section class="reveal">
                 <h2>8. Governing Law</h2>
                 <p>These Terms of Service are governed by and construed in accordance with applicable laws. Any disputes arising from or relating to these terms or our services shall be subject to the exclusive jurisdiction of competent courts.</p>
             </section>
 
-            <section>
-                <h2>9. Contact Information</h2>
-                <p>For questions, concerns, or notices regarding these Terms of Service, please contact us at:</p>
-                <p><strong>Email:</strong> contact@isolyr.xyz</p>
+            <section class="reveal">
+                <h2>9. Contact</h2>
+                <p>All communication with Isolyr Labs is handled exclusively through Discord. No public support channels are provided.</p>
             </section>
         </main>
 
         <footer>
-            <p>&copy; Isolyr Labs. All rights reserved.</p>
+            <p>&copy; Isolyr Labs — All rights reserved.</p>
         </footer>
     </div>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
 </body>
 </html>

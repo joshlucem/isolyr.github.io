@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Collection – Isolyr Labs</title>
-    <meta property="og:title" content="Data Collection – Isolyr Labs" />
-    <meta property="og:description" content="What we collect, when, and what we avoid." />
-    <meta property="og:image" content="https://isolyr.xyz/assets/og-default.png" />
-    <meta property="og:url" content="https://isolyr.xyz/privacy/data-collection" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Data Collection – Isolyr Labs" />
-    <meta name="twitter:description" content="What we collect, when, and what we avoid." />
-    <meta name="twitter:image" content="https://isolyr.xyz/assets/og-default.png" />
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-    <div class="container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Collection – Isolyr Labs</title>
+        <meta property="og:title" content="Data Collection – Isolyr Labs" />
+        <meta property="og:description" content="What we collect, when, and what we avoid." />
+        <meta property="og:image" content="https://isolyr.xyz/assets/og-default.png" />
+        <meta property="og:url" content="https://isolyr.xyz/privacy/data-collection" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Data Collection – Isolyr Labs" />
+        <meta name="twitter:description" content="What we collect, when, and what we avoid." />
+        <meta name="twitter:image" content="https://isolyr.xyz/assets/og-default.png" />
+        <link rel="stylesheet" href="../style.css" />
+        <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+    <body>
         <div class="site-header">
-            <div class="brand">Isolyr Labs</div>
+            <a href="/" class="brand">Isolyr Labs</a>
             <nav class="site-nav">
                 <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
                 <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
-                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/organization"
+                    ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
+                >
                 <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
             </nav>
             <div class="header-actions">
                 <div class="lang-switcher" aria-label="Language">
-                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="globe"></i><span class="lang-code">EN</span>
+                    </button>
                     <div class="lang-menu" role="menu">
                         <button data-lang="en" role="menuitem">EN</button>
                         <button data-lang="es" role="menuitem">ES</button>
@@ -37,88 +40,99 @@
             </div>
         </div>
 
-        <header class="reveal visible">
-            <h1>Data Collection</h1>
-            <p class="subtitle">What we collect, when, and what we avoid.</p>
-            <p class="last-updated">Last updated: December 19, 2025</p>
-        </header>
+        <div class="container with-header-spacing">
+            <header class="reveal visible">
+                <h1>Data Collection</h1>
+                <p class="subtitle">What we collect, when, and what we avoid.</p>
+                <p class="last-updated">Last updated: December 19, 2025</p>
+            </header>
 
-        <main class="document reveal">
-            <section class="reveal">
-                <h2>Principles</h2>
-                <ul>
-                    <li>Collect only what is necessary for the service to function or to protect it.</li>
-                    <li>Prefer transient data; avoid persistence unless required.</li>
-                    <li>State clearly what is not collected.</li>
-                </ul>
-            </section>
+            <main class="document reveal">
+                <section class="reveal">
+                    <h2>Principles</h2>
+                    <ul>
+                        <li>Collect only what is necessary for the service to function or to protect it.</li>
+                        <li>Prefer transient data; avoid persistence unless required.</li>
+                        <li>State clearly what is not collected.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <h2>What We Collect</h2>
-                <p><strong>Discord Bots</strong></p>
-                <ul>
-                    <li>User and server identifiers (IDs, usernames, server metadata).</li>
-                    <li>Command or interaction payloads needed to execute features.</li>
-                    <li>Message content only when strictly required for the requested action.</li>
-                    <li>Error and performance logs limited to the event context.</li>
-                </ul>
-                <p><strong>Minecraft Plugins</strong></p>
-                <ul>
-                    <li>Player UUIDs and usernames provided by Mojang.</li>
-                    <li>In-game events needed for plugin behavior (e.g., actions, stats).</li>
-                    <li>Server configuration relevant to the plugin.</li>
-                </ul>
-                <p><strong>Experimental or Custom Work</strong></p>
-                <ul>
-                    <li>Inputs defined by the feature or contract, documented per engagement.</li>
-                    <li>Operational metadata (timestamps, error traces) for stability.</li>
-                </ul>
-                <p><strong>Web Presence</strong></p>
-                <ul>
-                    <li>Basic server logs (IP, user agent, timestamp) for security and reliability.</li>
-                    <li>No trackers, ads, or behavioral profiling.</li>
-                </ul>
-            </section>
+                <section class="reveal">
+                    <h2>What We Collect</h2>
+                    <p><strong>Discord Bots</strong></p>
+                    <ul>
+                        <li>User and server identifiers (IDs, usernames, server metadata).</li>
+                        <li>Command or interaction payloads needed to execute features.</li>
+                        <li>Message content only when strictly required for the requested action.</li>
+                        <li>Error and performance logs limited to the event context.</li>
+                    </ul>
+                    <p><strong>Minecraft Plugins</strong></p>
+                    <ul>
+                        <li>Player UUIDs and usernames provided by Mojang.</li>
+                        <li>In-game events needed for plugin behavior (e.g., actions, stats).</li>
+                        <li>Server configuration relevant to the plugin.</li>
+                    </ul>
+                    <p><strong>Experimental or Custom Work</strong></p>
+                    <ul>
+                        <li>Inputs defined by the feature or contract, documented per engagement.</li>
+                        <li>Operational metadata (timestamps, error traces) for stability.</li>
+                    </ul>
+                    <p><strong>Web Presence</strong></p>
+                    <ul>
+                        <li>Basic server logs (IP, user agent, timestamp) for security and reliability.</li>
+                        <li>No trackers, ads, or behavioral profiling.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <h2>When We Collect</h2>
-                <ul>
-                    <li>When you invoke a command, interact with a bot, or use a plugin feature.</li>
-                    <li>When errors occur and diagnostics are necessary to fix or secure a service.</li>
-                    <li>When configuration or preferences are explicitly set for a service.</li>
-                </ul>
-            </section>
+                <section class="reveal">
+                    <h2>When We Collect</h2>
+                    <ul>
+                        <li>When you invoke a command, interact with a bot, or use a plugin feature.</li>
+                        <li>When errors occur and diagnostics are necessary to fix or secure a service.</li>
+                        <li>When configuration or preferences are explicitly set for a service.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <h2>What We Do Not Collect</h2>
-                <ul>
-                    <li>No advertising or analytics profiles.</li>
-                    <li>No broad message or chat history archiving.</li>
-                    <li>No payment information (handled by third parties when relevant).</li>
-                    <li>No biometric or sensitive categories of data.</li>
-                </ul>
-            </section>
+                <section class="reveal">
+                    <h2>What We Do Not Collect</h2>
+                    <ul>
+                        <li>No advertising or analytics profiles.</li>
+                        <li>No broad message or chat history archiving.</li>
+                        <li>No payment information (handled by third parties when relevant).</li>
+                        <li>No biometric or sensitive categories of data.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <h2>Retention Signals</h2>
-                <p>Collection is paired with minimal retention: transient where possible, short-lived logs for troubleshooting, and configuration data only while the feature is active. See Data Storage for details.</p>
-            </section>
+                <section class="reveal">
+                    <h2>Retention Signals</h2>
+                    <p>
+                        Collection is paired with minimal retention: transient where possible, short-lived logs for
+                        troubleshooting, and configuration data only while the feature is active. See Data Storage for
+                        details.
+                    </p>
+                </section>
 
-            <section class="reveal">
-                <a class="primary-link" href="/privacy">← Back to Privacy Policy</a>
-            </section>
-        </main>
+                <section class="reveal">
+                    <a class="primary-link" href="/privacy">← Back to Privacy Policy</a>
+                </section>
+            </main>
 
-        <footer>
-            <p>&copy; Isolyr Labs — All rights reserved.</p>
-            <nav class="footer-links">
-                <a href="/terms" class="footer-link">Terms of Service</a>
-                <span class="dot-sep">•</span>
-                <a href="/privacy" class="footer-link">Privacy Policy</a>
-            </nav>
-        </footer>
-    </div>
-    <script src="../script.js"></script>
-    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
-</body>
+            <footer>
+                <p>&copy; Isolyr Labs — All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="/terms" class="footer-link">Terms of Service</a>
+                    <span class="dot-sep">•</span>
+                    <a href="/privacy" class="footer-link">Privacy Policy</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="../script.js"></script>
+        <script>
+            try {
+                feather.replace();
+            } catch (e) {
+                console.warn("Feather icons load issue:", e);
+            }
+        </script>
+    </body>
 </html>

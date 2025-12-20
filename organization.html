@@ -8,31 +8,32 @@
         <script src="https://unpkg.com/feather-icons"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="site-header">
-                <div class="brand">Isolyr Labs</div>
-                <nav class="site-nav">
-                    <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
-                    <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
-                    <a href="/organization" class="active"
-                        ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
-                    >
-                    <a href="/contact"
-                        ><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a
-                    >
-                </nav>
-                <div class="header-actions">
-                    <div class="lang-switcher" aria-label="Language">
-                        <button class="lang-current" aria-haspopup="true" aria-expanded="false">
-                            <i data-feather="globe"></i><span class="lang-code">EN</span>
-                        </button>
-                        <div class="lang-menu" role="menu">
-                            <button data-lang="en" role="menuitem">EN</button>
-                            <button data-lang="es" role="menuitem">ES</button>
-                        </div>
+        <div class="site-header">
+            <a href="/" class="brand">Isolyr Labs</a>
+            <nav class="site-nav">
+                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                <a href="/organization" class="active"
+                    ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
+                >
+                <a href="/contact"
+                    ><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a
+                >
+            </nav>
+            <div class="header-actions">
+                <div class="lang-switcher" aria-label="Language">
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="globe"></i><span class="lang-code">EN</span>
+                    </button>
+                    <div class="lang-menu" role="menu">
+                        <button data-lang="en" role="menuitem">EN</button>
+                        <button data-lang="es" role="menuitem">ES</button>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="container with-header-spacing">
 
             <header class="reveal visible">
                 <h1 data-i18n="org_title">Organization</h1>

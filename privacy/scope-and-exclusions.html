@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scope and Exclusions – Isolyr Labs</title>
-    <meta property="og:title" content="Scope and Exclusions – Isolyr Labs" />
-    <meta property="og:description" content="Scope boundaries, third parties, and separate agreements." />
-    <meta property="og:image" content="https://isolyr.xyz/assets/og-default.png" />
-    <meta property="og:url" content="https://isolyr.xyz/privacy/scope-and-exclusions" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Scope and Exclusions – Isolyr Labs" />
-    <meta name="twitter:description" content="Scope boundaries, third parties, and separate agreements." />
-    <meta name="twitter:image" content="https://isolyr.xyz/assets/og-default.png" />
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-    <div class="container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Scope and Exclusions – Isolyr Labs</title>
+        <meta property="og:title" content="Scope and Exclusions – Isolyr Labs" />
+        <meta property="og:description" content="Scope boundaries, third parties, and separate agreements." />
+        <meta property="og:image" content="https://isolyr.xyz/assets/og-default.png" />
+        <meta property="og:url" content="https://isolyr.xyz/privacy/scope-and-exclusions" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Scope and Exclusions – Isolyr Labs" />
+        <meta name="twitter:description" content="Scope boundaries, third parties, and separate agreements." />
+        <meta name="twitter:image" content="https://isolyr.xyz/assets/og-default.png" />
+        <link rel="stylesheet" href="../style.css" />
+        <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+    <body>
         <div class="site-header">
-            <div class="brand">Isolyr Labs</div>
+            <a href="/" class="brand">Isolyr Labs</a>
             <nav class="site-nav">
                 <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
                 <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
-                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/organization"
+                    ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
+                >
                 <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
             </nav>
             <div class="header-actions">
                 <div class="lang-switcher" aria-label="Language">
-                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="globe"></i><span class="lang-code">EN</span>
+                    </button>
                     <div class="lang-menu" role="menu">
                         <button data-lang="en" role="menuitem">EN</button>
                         <button data-lang="es" role="menuitem">ES</button>
@@ -37,60 +40,70 @@
             </div>
         </div>
 
-        <header class="reveal visible">
-            <h1>When This Policy Does Not Apply</h1>
-            <p class="subtitle">Scope boundaries, third parties, and separate agreements.</p>
-            <p class="last-updated">Last updated: December 19, 2025</p>
-        </header>
+        <div class="container with-header-spacing">
+            <header class="reveal visible">
+                <h1>When This Policy Does Not Apply</h1>
+                <p class="subtitle">Scope boundaries, third parties, and separate agreements.</p>
+                <p class="last-updated">Last updated: December 19, 2025</p>
+            </header>
 
-        <main class="document reveal">
-            <section class="reveal">
-                <h2>Third-Party Platforms</h2>
-                <ul>
-                    <li>Discord and Mojang handle account data under their own privacy policies.</li>
-                    <li>We do not control how these platforms process or store their data.</li>
-                </ul>
-            </section>
+            <main class="document reveal">
+                <section class="reveal">
+                    <h2>Third-Party Platforms</h2>
+                    <ul>
+                        <li>Discord and Mojang handle account data under their own privacy policies.</li>
+                        <li>We do not control how these platforms process or store their data.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <h2>Customer-Managed Environments</h2>
-                <ul>
-                    <li>Servers or infrastructure you operate are governed by your own policies.</li>
-                    <li>If you install our plugins or bots, ensure your users are informed under your terms.</li>
-                </ul>
-            </section>
+                <section class="reveal">
+                    <h2>Customer-Managed Environments</h2>
+                    <ul>
+                        <li>Servers or infrastructure you operate are governed by your own policies.</li>
+                        <li>If you install our plugins or bots, ensure your users are informed under your terms.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <h2>Contract-Specific Terms</h2>
-                <ul>
-                    <li>Custom engagements may define data handling separately; those terms take precedence for the contracted scope.</li>
-                    <li>We still aim for minimal collection and clear retention even under bespoke terms.</li>
-                </ul>
-            </section>
+                <section class="reveal">
+                    <h2>Contract-Specific Terms</h2>
+                    <ul>
+                        <li>
+                            Custom engagements may define data handling separately; those terms take precedence for the
+                            contracted scope.
+                        </li>
+                        <li>We still aim for minimal collection and clear retention even under bespoke terms.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <h2>External Links and Integrations</h2>
-                <ul>
-                    <li>Links to third-party sites are outside this policy; review their terms.</li>
-                    <li>User-configured integrations (webhooks, APIs) follow the destination service’s rules.</li>
-                </ul>
-            </section>
+                <section class="reveal">
+                    <h2>External Links and Integrations</h2>
+                    <ul>
+                        <li>Links to third-party sites are outside this policy; review their terms.</li>
+                        <li>User-configured integrations (webhooks, APIs) follow the destination service’s rules.</li>
+                    </ul>
+                </section>
 
-            <section class="reveal">
-                <a class="primary-link" href="/privacy">← Back to Privacy Policy</a>
-            </section>
-        </main>
+                <section class="reveal">
+                    <a class="primary-link" href="/privacy">← Back to Privacy Policy</a>
+                </section>
+            </main>
 
-        <footer>
-            <p>&copy; Isolyr Labs — All rights reserved.</p>
-            <nav class="footer-links">
-                <a href="/terms" class="footer-link">Terms of Service</a>
-                <span class="dot-sep">•</span>
-                <a href="/privacy" class="footer-link">Privacy Policy</a>
-            </nav>
-        </footer>
-    </div>
-    <script src="../script.js"></script>
-    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
-</body>
+            <footer>
+                <p>&copy; Isolyr Labs — All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="/terms" class="footer-link">Terms of Service</a>
+                    <span class="dot-sep">•</span>
+                    <a href="/privacy" class="footer-link">Privacy Policy</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="../script.js"></script>
+        <script>
+            try {
+                feather.replace();
+            } catch (e) {
+                console.warn("Feather icons load issue:", e);
+            }
+        </script>
+    </body>
 </html>

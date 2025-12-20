@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AirwaveChat - Realistic Radio Communication - Isolyr Labs</title>
+        <link rel="stylesheet" href="../../../style.css" />
+        <script src="https://unpkg.com/feather-icons"></script>
+        <style>
+            /* Plugin Header */
+            .plugin-header {
+                background: linear-gradient(135deg, var(--accent), var(--accent-pressed));
+                padding: 2.5rem 2rem;
+                border-radius: 16px;
+                margin-bottom: 2rem;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .plugin-header-content {
+                flex: 1;
+                min-width: 250px;
+            }
+
+            .plugin-download-section {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+                min-width: 160px;
+            }
+
+            .plugin-title {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .plugin-icon-large {
+                width: 80px;
+                height: 80px;
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                backdrop-filter: blur(10px);
+            }
+
+            .plugin-icon-large svg {
+                width: 48px;
+                height: 48px;
+                stroke-width: 1.5px;
+            }
+
+            .plugin-title h1 {
+                margin: 0;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: white;
+            }
+
+            .plugin-tagline {
+                font-size: 1.2rem;
+                opacity: 0.9;
+                margin-bottom: 1.5rem;
+                color: white !important;
+            }
+
+            .plugin-meta {
+                display: flex;
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .meta-item {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .meta-label {
+                font-size: 0.85rem;
+                opacity: 0.8;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                color: white;
+            }
+
+            .meta-value {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: white;
+            }
+
+            /* Buttons */
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.875rem 1.5rem;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.2s ease;
+                cursor: pointer;
+                border: none;
+                font-size: 1rem;
+            }
+
+            .btn-primary {
+                background: var(--accent);
+                color: white;
+            }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .plugin-actions .btn-primary {
+                padding: 1.25rem 2rem;
+                font-size: 1.1rem;
+                text-align: center;
+                width: 100%;
+            }
+
+            .btn-secondary {
+                background: var(--bg-elev);
+                color: var(--text);
+                border: 1px solid var(--border);
+            }
+
+            .btn-secondary:hover {
+                border-color: var(--accent);
+                background: rgba(255, 59, 48, 0.04);
+            }
+
+            /* Layout Principal */
+            .plugin-content {
+                display: grid;
+                grid-template-columns: 1fr 320px;
+                gap: 2rem;
+                margin-top: 2rem;
+                align-items: flex-start;
+            }
+
+            .main-content {
+                min-width: 0;
+            }
+
+            .sidebar {
+                position: sticky;
+                top: 2rem;
+            }
+
+            /* Cards con diseño mejorado */
+            .info-card {
+                background: var(--bg-elev);
+                border-radius: 12px;
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                border: 1px solid var(--border);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                transition: all 0.3s ease;
+            }
+
+            .info-card:hover {
+                box-shadow: 0 4px 16px rgba(255, 59, 48, 0.1);
+                border-color: rgba(255, 59, 48, 0.3);
+                transform: translateY(-2px);
+            }
+
+            .info-card h3 {
+                margin-top: 0;
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .info-row {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .info-row:last-child {
+                border-bottom: none;
+            }
+
+            .info-label {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+
+            .info-value {
+                font-weight: 600;
+                text-align: right;
+            }
+
+            /* Content Sections */
+            .content-section {
+                background: var(--bg-elev);
+                border-radius: 12px;
+                padding: 2rem;
+                margin-bottom: 2rem;
+                border: 1px solid var(--border);
+            }
+
+            .content-section h2 {
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: var(--accent);
+            }
+
+            /* Features Grid */
+            .features-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .feature-item {
+                display: flex;
+                gap: 1rem;
+                padding: 1rem;
+                background: var(--bg-primary);
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                transition: all 0.2s ease;
+            }
+
+            .feature-item:hover {
+                border-color: var(--accent);
+                box-shadow: 0 4px 12px rgba(255, 59, 48, 0.1);
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                background: linear-gradient(135deg, var(--accent), var(--accent-pressed));
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .feature-icon svg {
+                width: 24px;
+                height: 24px;
+                stroke: white;
+            }
+
+            .feature-content h3 {
+                margin: 0 0 0.5rem 0;
+                font-size: 1rem;
+            }
+
+            .feature-content p {
+                margin: 0;
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+
+            /* Badges */
+            .badge-list {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+                margin-top: 1rem;
+            }
+
+            .badge {
+                display: inline-block;
+                padding: 0.375rem 0.75rem;
+                background: var(--accent);
+                color: white;
+                border-radius: 6px;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+
+            .badge.secondary {
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+            }
+
+            /* Collapsible Sections */
+            .collapsible-section {
+                background: var(--bg-elev);
+                border-radius: 12px;
+                border: 1px solid var(--border);
+                margin-bottom: 1.5rem;
+                overflow: hidden;
+            }
+
+            .collapsible-header {
+                background: linear-gradient(135deg, rgba(255, 59, 48, 0.08), rgba(255, 59, 48, 0.04));
+                padding: 1.5rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-weight: 600;
+                font-size: 1.1rem;
+                color: var(--accent);
+                transition: all 0.3s ease;
+                border: none;
+                width: 100%;
+                text-align: left;
+            }
+
+            .collapsible-header:hover {
+                background: linear-gradient(135deg, rgba(255, 59, 48, 0.12), rgba(255, 59, 48, 0.08));
+            }
+
+            .collapsible-header i {
+                transition: transform 0.3s ease;
+                width: 20px;
+                height: 20px;
+            }
+
+            .collapsible-header.active i {
+                transform: rotate(180deg);
+            }
+
+            .collapsible-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                padding: 0;
+            }
+
+            .collapsible-content.active {
+                max-height: 2000px;
+                padding: 1.5rem;
+                border-top: 1px solid var(--border);
+            }
+
+            /* Code Block */
+            .code-block {
+                background: var(--bg-primary);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1.5rem;
+                overflow-x: auto;
+                margin: 0;
+            }
+
+            .code-block code {
+                font-family: "Courier New", monospace;
+                color: var(--accent);
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .code-block h3 {
+                margin-top: 0;
+                margin-bottom: 1rem;
+                color: var(--text);
+            }
+
+            .code-block h3:not(:first-child) {
+                margin-top: 1.5rem;
+            }
+
+            /* Screenshots */
+            .screenshot-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            /* Responsive */
+            @media (max-width: 1024px) {
+                .plugin-content {
+                    grid-template-columns: 1fr;
+                }
+
+                .sidebar {
+                    position: static;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                    gap: 1.5rem;
+                }
+
+                .info-card {
+                    margin-bottom: 0;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .plugin-header {
+                    flex-direction: column;
+                    align-items: stretch;
+                    padding: 2rem 1.5rem;
+                }
+
+                .plugin-title {
+                    margin-bottom: 1.5rem;
+                }
+
+                .plugin-title h1 {
+                    font-size: 1.8rem;
+                }
+
+                .plugin-download-section {
+                    width: 100%;
+                }
+
+                .plugin-meta {
+                    gap: 1rem;
+                }
+
+                .plugin-content {
+                    margin-top: 1.5rem;
+                    gap: 1.5rem;
+                }
+
+                .content-section {
+                    padding: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .features-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .collapsible-header {
+                    padding: 1rem;
+                    font-size: 1rem;
+                }
+
+                .collapsible-content.active {
+                    padding: 1rem;
+                }
+
+                /* Disable downloads on mobile */
+                a[download],
+                a[href*=".jar"],
+                a[href*="/downloads/"] {
+                    pointer-events: none;
+                    opacity: 0.5;
+                    position: relative;
+                }
+
+                a[download]::after,
+                a[href*=".jar"]::after,
+                a[href*="/downloads/"]::after {
+                    content: "Downloads disabled on mobile";
+                    position: absolute;
+                    bottom: -28px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 0.7rem;
+                    color: white;
+                    background: rgba(0, 0, 0, 0.7);
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    white-space: nowrap;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="site-header">
+                <div class="brand">Isolyr Labs</div>
+                <nav class="site-nav">
+                    <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                    <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                    <a href="/organization"
+                        ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
+                    >
+                    <a href="/contact"
+                        ><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a
+                    >
+                </nav>
+                <div class="header-actions">
+                    <div class="lang-switcher" aria-label="Language">
+                        <button class="lang-current" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="globe"></i><span class="lang-code">EN</span>
+                        </button>
+                        <div class="lang-menu" role="menu">
+                            <button data-lang="en" role="menuitem">EN</button>
+                            <button data-lang="es" role="menuitem">ES</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="document reveal">
+                <div class="breadcrumb">
+                    <a href="/products">← Products</a> / <a href="/products/mc-plugins">Minecraft Plugins</a> /
+                    <span>AirwaveChat</span>
+                </div>
+
+                <div class="plugin-header">
+                    <div class="plugin-header-content">
+                        <div class="plugin-title">
+                            <div class="plugin-icon-large">
+                                <i data-feather="rss"></i>
+                            </div>
+                            <div>
+                                <h1>AirwaveChat</h1>
+                                <div class="badge-list">
+                                    <span class="badge">Chat Plugin</span>
+                                    <span class="badge secondary">Open Source</span>
+                                    <span class="badge secondary">Free</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="plugin-tagline">
+                            Realistic radio communication system for your Minecraft server with distance-based voice chat
+                            integration
+                        </p>
+
+                        <div class="plugin-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Version</span>
+                                <span class="meta-value">2.0.0 - Stable</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Last Updated</span>
+                                <span class="meta-value">Dec 20, 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">License</span>
+                                <span class="meta-value">Source-Available</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Status</span>
+                                <span class="meta-value">Stable</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plugin-download-section">
+                        <div class="plugin-actions">
+                            <a
+                                href="/downloads/AirwaveChat-2.0.0.jar"
+                                class="btn btn-primary"
+                                download="AirwaveChat-2.0.0.jar"
+                            >
+                                <i data-feather="download"></i>
+                                Download v2.0.0
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plugin-content">
+                    <div class="main-content">
+                        <!-- Description Section -->
+                        <section class="content-section">
+                            <h2>
+                                <i data-feather="file-text"></i>
+                                Description
+                            </h2>
+                            <p>
+                                <strong>AirwaveChat</strong> is a sophisticated radio communication plugin that brings
+                                realistic AM/FM radio functionality to your Minecraft server. Players can communicate
+                                across long distances using over 1000 available frequencies with authentic signal
+                                degradation and static effects.
+                            </p>
+                            <p>
+                                <strong>Privacy First:</strong> Radio communications are 100% private with
+                                EventPriority.LOWEST ensuring complete isolation. No external plugins can intercept
+                                radio messages, and communication is automatically limited to the same world.
+                            </p>
+                            <p>
+                                Perfect for roleplay servers (Police, EMS, military channels), survival servers, PvP
+                                coordination, minigames, and faction servers. The plugin is fully configurable,
+                                thread-safe with Folia support, and features async file I/O for smooth performance.
+                            </p>
+                        </section>
+
+                        <!-- Features Section -->
+                        <section class="content-section">
+                            <h2>
+                                <i data-feather="zap"></i>
+                                Key Features
+                            </h2>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i data-feather="radio"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3>AM/FM Bands</h3>
+                                        <p>AM: 1000-1999 kHz (~100 blocks) • FM: 100.0-199.9 MHz (~40 blocks)</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i data-feather="activity"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3>Signal Degradation</h3>
+                                        <p>Realistic static effects with distance-based text distortion</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i data-feather="shield"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3>100% Private</h3>
+                                        <p>Complete communication isolation, no external interception possible</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i data-feather="list"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3>1000+ Frequencies</h3>
+                                        <p>Plenty of channels with custom named frequencies support</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i data-feather="bar-chart-2"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3>Live Signal Bar</h3>
+                                        <p>Real-time band/frequency/strength indicator in action bar</p>
+                                    </div>
+                                </div>
+
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i data-feather="server"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h3>Folia Support</h3>
+                                        <p>Thread-safe with async I/O, only 40KB footprint</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Installation Section -->
+                        <section class="content-section">
+                            <h2>
+                                <i data-feather="download-cloud"></i>
+                                Installation
+                            </h2>
+                            <ol>
+                                <li>Download the latest version of AirwaveChat from the download button above</li>
+                                <li>Stop your Minecraft server</li>
+                                <li>
+                                    Place the <code>AirwaveChat.jar</code> file in your server's
+                                    <code>plugins</code> folder
+                                </li>
+                                <li>Start your server to generate the default configuration files</li>
+                                <li>Customize the settings in <code>plugins/AirwaveChat/config.yml</code></li>
+                                <li>Restart your server and enjoy!</li>
+                            </ol>
+                        </section>
+
+                        <!-- Commands Section -->
+                        <section class="content-section">
+                            <div class="collapsible-section">
+                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                    <i data-feather="chevron-down"></i>
+                                    User Commands
+                                </button>
+                                <div class="collapsible-content">
+                                    <div class="code-block">
+                                        <code>
+                                            /connect FM/AM &lt;frequency&gt; - Connect to a frequency (aliases: /c, /radio, /tune)<br />
+                                            /disconnect - Disconnect from current frequency (aliases: /dc, /leave, /tune-off)<br />
+                                            /frequencies list [FM/AM] [page] - List available frequencies (aliases: /freq l, /f l)<br />
+                                            /frequencies current - Show current frequency (aliases: /freq c, /f c)<br />
+                                            /frequencies info &lt;frequency&gt; - Get frequency info (aliases: /freq i, /f i)<br />
+                                            /frequencies top - Show most popular channels (aliases: /freq t, /f t)<br />
+                                            /frequencies search &lt;query&gt; - Search channels by name (aliases: /freq s, /f s)
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="collapsible-section">
+                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                    <i data-feather="chevron-down"></i>
+                                    Admin Commands
+                                </button>
+                                <div class="collapsible-content">
+                                    <div class="code-block">
+                                        <code>
+                                            /airwavechat reload - Reload configuration (aliases: /awc reload)<br />
+                                            /airwavechat about - Show plugin info (aliases: /awc about)<br />
+                                            /airwavechat help - Show help menu (aliases: /awc help)
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="collapsible-section">
+                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                    <i data-feather="chevron-down"></i>
+                                    Permissions
+                                </button>
+                                <div class="collapsible-content">
+                                    <div class="code-block">
+                                        <code>
+                                            airwavechat.user - Access to user commands (default: true)<br />
+                                            airwavechat.admin - Access to admin commands (default: op)
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Configuration Section -->
+                        <section class="content-section">
+                            <div class="collapsible-section">
+                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                    <i data-feather="chevron-down"></i>
+                                    Configuration (config.yml)
+                                </button>
+                                <div class="collapsible-content">
+                                    <p>AirwaveChat comes with extensive configuration options:</p>
+                                    <div class="code-block">
+                                        <code>
+                                            frequencies:<br />
+                                            &nbsp;&nbsp;fm:<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;min: 100.0<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;max: 199.9<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;step: 0.1<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 40.0<br />
+                                            &nbsp;&nbsp;am:<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;min: 1000<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;max: 1999<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;step: 1<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 100.0<br />
+                                            &nbsp;&nbsp;custom:<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Police:<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: "FM"<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frequency: 123.5<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 60.0<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Emergency:<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: "AM"<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frequency: 1050<br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 150.0<br />
+                                            <br />
+                                            options:<br />
+                                            &nbsp;&nbsp;enable_proximity: true<br />
+                                            &nbsp;&nbsp;enable_static: true<br />
+                                            &nbsp;&nbsp;static_threshold: 0.75<br />
+                                            &nbsp;&nbsp;static_intensity: 0.5<br />
+                                            &nbsp;&nbsp;enable_signal_bar: true<br />
+                                            &nbsp;&nbsp;enable_sounds: true<br />
+                                            &nbsp;&nbsp;cooldown_connect: 2<br />
+                                            &nbsp;&nbsp;cooldown_disconnect: 2
+                                        </code>
+                                    </div>
+                                    <p style="margin-top: 1rem">
+                                        All messages are customizable with MiniMessage format support in messages.yml
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Signal Degradation Section -->
+                        <section class="content-section">
+                            <div class="collapsible-section">
+                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                    <i data-feather="chevron-down"></i>
+                                    Signal Degradation System
+                                </button>
+                                <div class="collapsible-content">
+                                    <p>
+                                        As you move further from other players, your signal weakens. Characters progressively
+                                        drop out or become garbled (shown as ▯), simulating real radio interference.
+                                    </p>
+                                    <table style="width: 100%; margin-top: 1.5rem; border-collapse: collapse">
+                                        <thead>
+                                            <tr
+                                                style="
+                                                    background: var(--bg-primary);
+                                                    border-bottom: 2px solid var(--border-subtle);
+                                                "
+                                            >
+                                                <th style="padding: 0.75rem; text-align: left">Distance</th>
+                                                <th style="padding: 0.75rem; text-align: left">Signal Quality</th>
+                                                <th style="padding: 0.75rem; text-align: left">Effect</th>
+                                                <th style="padding: 0.75rem; text-align: left">Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle)">
+                                                <td style="padding: 0.75rem">0-60%</td>
+                                                <td style="padding: 0.75rem">Clear</td>
+                                                <td style="padding: 0.75rem">Perfect</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">"Meet at the tower"</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle)">
+                                                <td style="padding: 0.75rem">60-75%</td>
+                                                <td style="padding: 0.75rem">Good</td>
+                                                <td style="padding: 0.75rem">Minor static</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">"Meet at t▯e tower"</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle)">
+                                                <td style="padding: 0.75rem">75-90%</td>
+                                                <td style="padding: 0.75rem">Fair</td>
+                                                <td style="padding: 0.75rem">Heavy static</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">"M▯▯t at ▯▯e ▯o▯er"</td>
+                                            </tr>
+                                            <tr style="border-bottom: 1px solid var(--border-subtle)">
+                                                <td style="padding: 0.75rem">90-100%</td>
+                                                <td style="padding: 0.75rem">Weak</td>
+                                                <td style="padding: 0.75rem">Severe static</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">"▯▯▯▯ ▯▯ ▯▯▯ ▯▯▯▯▯"</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 0.75rem">100%+</td>
+                                                <td style="padding: 0.75rem">None</td>
+                                                <td style="padding: 0.75rem">No signal</td>
+                                                <td style="padding: 0.75rem; font-style: italic">(message not received)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Use Cases Section -->
+                        <section class="content-section">
+                            <h2>
+                                <i data-feather="briefcase"></i>
+                                Use Cases
+                            </h2>
+                            <ul style="list-style-position: inside; color: var(--text-secondary)">
+                                <li>
+                                    <strong>Roleplay Servers:</strong> Police, EMS, military, and civilian channels with
+                                    realistic communication
+                                </li>
+                                <li><strong>Survival Servers:</strong> Coordinate with your team across distances</li>
+                                <li>
+                                    <strong>PvP Servers:</strong> Strategic team communication without console
+                                    visibility
+                                </li>
+                                <li><strong>Minigames:</strong> Team-based modes with radio coordination</li>
+                                <li>
+                                    <strong>Faction Servers:</strong> Private faction channels with encryption-like
+                                    privacy
+                                </li>
+                            </ul>
+                        </section>
+                        <!-- Screenshots (v1.0.2) -->
+                        <section class="content-section">
+                            <h2>
+                                <i data-feather="image"></i>
+                                Screenshots
+                            </h2>
+                            <div class="badge secondary">Captured on v1.0.2</div>
+                            <div class="screenshot-gallery" style="margin-top: 1rem">
+                                <figure class="screenshot-item">
+                                    <img
+                                        src="/assets/airwavechat/1011fm-sunset.png"
+                                        alt="AirwaveChat: 101.1 FM with signal bar at sunset"
+                                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border)"
+                                    />
+                                    <figcaption style="margin-top: 0.5rem; color: var(--text-muted)">
+                                        101.1 FM · Live signal bar · ~33m distance · minor static
+                                    </figcaption>
+                                </figure>
+                                <figure class="screenshot-item">
+                                    <img
+                                        src="/assets/airwavechat/1011fm-dusk.png"
+                                        alt="AirwaveChat: 101.1 FM with increased static at dusk"
+                                        style="width: 100%; border-radius: 8px; border: 1px solid var(--border)"
+                                    />
+                                    <figcaption style="margin-top: 0.5rem; color: var(--text-muted)">
+                                        101.1 FM · Static increases with distance · characters garble progressively
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </section>
+
+                        <!-- Support Section -->
+                        <section class="content-section">
+                            <h2>
+                                <i data-feather="help-circle"></i>
+                                Support & Community
+                            </h2>
+                            <p>Need help with AirwaveChat? Found a bug? We're here to help!</p>
+                            <ul style="list-style-position: inside">
+                                <li>
+                                    Join our
+                                    <a
+                                        href="https://discord.gg/DHfdnWUFvY"
+                                        target="_blank"
+                                        style="color: var(--accent-primary)"
+                                        >Discord server</a
+                                    >
+                                    for quick support
+                                </li>
+                                <li>
+                                    Report bugs on
+                                    <a
+                                        href="https://github.com/joshlucem/AirwaveChat/issues"
+                                        target="_blank"
+                                        style="color: var(--accent-primary)"
+                                        >GitHub Issues</a
+                                    >
+                                </li>
+                                <li>
+                                    View source code on
+                                    <a
+                                        href="https://github.com/joshlucem/AirwaveChat"
+                                        target="_blank"
+                                        style="color: var(--accent-primary)"
+                                        >GitHub</a
+                                    >
+                                </li>
+                                <li>
+                                    Check the
+                                    <a
+                                        href="https://www.spigotmc.org/resources/airwavechat.130344/"
+                                        target="_blank"
+                                        style="color: var(--accent-primary)"
+                                        >SpigotMC page</a
+                                    >
+                                    for discussions
+                                </li>
+                                <li>
+                                    Contact the developer:
+                                    <a href="/organization#joshlucem" style="color: var(--accent-primary)"
+                                        >@joshlucem</a
+                                    >
+                                </li>
+                            </ul>
+                            <p
+                                style="
+                                    margin-top: 1.5rem;
+                                    padding: 1rem;
+                                    background: var(--bg-primary);
+                                    border-left: 3px solid var(--accent-primary);
+                                    border-radius: 4px;
+                                "
+                            >
+                                <strong>License:</strong> Proprietary Software - All rights reserved. For commercial use
+                                or inquiries, contact @joshlucem on Discord.
+                            </p>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <div class="info-card">
+                            <h3>
+                                <i data-feather="info"></i>
+                                Plugin Information
+                            </h3>
+                            <div class="info-row">
+                                <span class="info-label">Current Version</span>
+                                <span class="info-value">2.0.0</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Status</span>
+                                <span class="info-value">Stable</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Last Update</span>
+                                <span class="info-value">Dec 20, 2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">File Size</span>
+                                <span class="info-value">40 KB</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>
+                                <i data-feather="server"></i>
+                                Requirements
+                            </h3>
+                            <div class="info-row">
+                                <span class="info-label">Server Type</span>
+                                <span class="info-value">Paper/Spigot/Folia</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Minecraft</span>
+                                <span class="info-value">1.20.4+</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Java Version</span>
+                                <span class="info-value">17+ (21 recommended)</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>
+                                <i data-feather="user"></i>
+                                Developer
+                            </h3>
+                            <div style="text-align: center; padding: 1rem 0">
+                                <div style="font-weight: 600; margin-bottom: 0.5rem">Josh Lucem</div>
+                                <a
+                                    href="/organization#joshlucem"
+                                    style="color: var(--accent-primary); text-decoration: none"
+                                >
+                                    @joshlucem
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </main>
+
+            <footer>
+                <p>&copy; Isolyr Labs — All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="/terms" class="footer-link">Terms of Service</a>
+                    <span class="dot-sep">•</span>
+                    <a href="/privacy" class="footer-link">Privacy Policy</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="../../../script.js"></script>
+        <script>
+            try {
+                feather.replace();
+            } catch (e) {
+                console.warn("Feather icons load issue:", e);
+            }
+        </script>
+    </body>
+</html>

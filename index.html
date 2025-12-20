@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home – Isolyr Labs</title>
-    <meta property="og:title" content="Home – Isolyr Labs" />
-    <meta property="og:description" content="Independent lab for Discord bots, Minecraft plugins, and experimental systems." />
-    <meta property="og:image" content="https://isolyr.xyz/assets/og-default.png" />
-    <meta property="og:url" content="https://isolyr.xyz/" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Home – Isolyr Labs" />
-    <meta name="twitter:description" content="Independent lab for Discord bots, Minecraft plugins, and experimental systems." />
-    <meta name="twitter:image" content="https://isolyr.xyz/assets/og-default.png" />
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-    <div class="container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home – Isolyr Labs</title>
+        <meta property="og:title" content="Home – Isolyr Labs" />
+        <meta
+            property="og:description"
+            content="Independent lab for Discord bots, Minecraft plugins, and experimental systems."
+        />
+        <meta property="og:image" content="https://isolyr.xyz/assets/og-default.png" />
+        <meta property="og:url" content="https://isolyr.xyz/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home – Isolyr Labs" />
+        <meta
+            name="twitter:description"
+            content="Independent lab for Discord bots, Minecraft plugins, and experimental systems."
+        />
+        <meta name="twitter:image" content="https://isolyr.xyz/assets/og-default.png" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+    <body>
         <div class="site-header">
             <div class="brand">Isolyr Labs</div>
             <nav class="site-nav">
                 <a href="/" class="active"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
                 <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
-                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
+                <a href="/organization"
+                    ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
+                >
                 <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
             </nav>
             <div class="header-actions">
                 <div class="lang-switcher" aria-label="Language">
-                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
+                    <button class="lang-current" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="globe"></i><span class="lang-code">EN</span>
+                    </button>
                     <div class="lang-menu" role="menu">
                         <button data-lang="en" role="menuitem">EN</button>
                         <button data-lang="es" role="menuitem">ES</button>
@@ -36,47 +45,175 @@
                 </div>
             </div>
         </div>
-        <header class="reveal visible">
-            <h1>Isolyr Labs</h1>
-            <p class="subtitle" data-i18n="home_subtitle">An independent development laboratory.</p>
+
+        <header class="reveal visible hero-section">
+            <div class="hero-content">
+                <h1>Isolyr Labs</h1>
+                <p class="subtitle" data-i18n="home_subtitle">An independent development laboratory.</p>
+                <p class="hero-description">
+                    Crafting robust Discord bots, Minecraft plugins, and experimental digital systems with intentional
+                    design and long-term maintenance.
+                </p>
+                <div class="hero-actions">
+                    <a href="/products" class="btn btn-primary">Explore Products</a>
+                    <a href="https://discord.gg/DHfdnWUFvY" target="_blank" class="btn btn-secondary">Join Discord</a>
+                </div>
+            </div>
+            <div class="hero-background"></div>
         </header>
 
-        <main>
-            <section class="intro reveal">
-                <p data-i18n="home_intro1">Isolyr Labs is an independent laboratory focused on the development and maintenance of digital systems. Our work includes Discord bots, Minecraft plugins, and experimental or contractual digital services.</p>
-                <p data-i18n="home_intro2">Founded and maintained by an independent developer, Isolyr Labs operates as a controlled environment for design, iteration, and long-term maintenance.</p>
-            </section>
+        <div class="hero-fade"></div>
 
-            <section class="faq reveal">
-                <h2 data-i18n="faq_title">FAQ</h2>
-                <div class="faq-list">
-                    <details>
-                        <summary data-i18n="faq_q1">What is Isolyr Labs?</summary>
-                        <p data-i18n="faq_a1">Isolyr Labs is an independent development laboratory focused on digital systems. Work is structured, intentional, and long-term.</p>
-                    </details>
-                    <details>
-                        <summary data-i18n="faq_q2">What services are provided?</summary>
-                        <p data-i18n="faq_a2">Discord bots, Minecraft plugins, and experimental systems. Contractual work is considered selectively.</p>
-                    </details>
-                    <details>
-                        <summary data-i18n="faq_q3">How does contact work?</summary>
-                        <p data-i18n="faq_a3">Discord is the only channel. Communication is asynchronous and capacity-driven.</p>
-                    </details>
+        <div class="container">
+            <main>
+                <div class="content-grid">
+                    <section class="faq reveal">
+                        <div class="section-header">
+                            <h2 data-i18n="faq_title">FAQ</h2>
+                            <p class="section-subtitle">Quick answers about the lab, services, and support.</p>
+                        </div>
+                        <div class="faq-list">
+                            <details open>
+                                <summary>
+                                    <i data-feather="help-circle"></i>
+                                    <span data-i18n="faq_q1">What is Isolyr Labs?</span>
+                                </summary>
+                                <p data-i18n="faq_a1">
+                                    Isolyr Labs is an independent development laboratory focused on digital systems.
+                                    Work is structured, intentional, and long-term.
+                                </p>
+                            </details>
+                            <details>
+                                <summary>
+                                    <i data-feather="package"></i>
+                                    <span data-i18n="faq_q2">What services are provided?</span>
+                                </summary>
+                                <p data-i18n="faq_a2">
+                                    Discord bots, Minecraft plugins, and experimental systems. Contractual work is
+                                    considered selectively.
+                                </p>
+                            </details>
+                            <details>
+                                <summary>
+                                    <i data-feather="message-circle"></i>
+                                    <span data-i18n="faq_q3">How does contact work?</span>
+                                </summary>
+                                <p data-i18n="faq_a3">
+                                    Discord is the only channel. Communication is asynchronous and capacity-driven.
+                                </p>
+                            </details>
+                            <details>
+                                <summary>
+                                    <i data-feather="users"></i>
+                                    <span>Support & response times</span>
+                                </summary>
+                                <p>
+                                    Support is best-effort. Responses depend on capacity and complexity; critical issues
+                                    are prioritized.
+                                </p>
+                            </details>
+                            <details>
+                                <summary>
+                                    <i data-feather="shield"></i>
+                                    <span>Licensing & usage</span>
+                                </summary>
+                                <p>
+                                    Projects may be source-available or proprietary depending on scope. Review each
+                                    product page for license details.
+                                </p>
+                            </details>
+                        </div>
+                    </section>
+
+                    <section class="timeline reveal">
+                        <h2>Timeline</h2>
+                        <div class="timeline-container">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <div class="timeline-dot"></div>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Dec 2025</div>
+                                    <div class="timeline-title">AirwaveChat Plugin Released</div>
+                                    <p class="timeline-description">
+                                        Full release of AirwaveChat 2.0.0 with radio communication system for Minecraft.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <div class="timeline-dot"></div>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Jan 2026</div>
+                                    <div class="timeline-title">PlayerWaypoints In Development</div>
+                                    <p class="timeline-description">
+                                        Navigation plugin allowing players to create and manage custom waypoints.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <div class="timeline-dot"></div>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Q1 2026</div>
+                                    <div class="timeline-title">New Discord Bot Initiative</div>
+                                    <p class="timeline-description">
+                                        Exploring advanced automation and community management solutions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
-        </main>
 
-        <footer>
-            <p>&copy; Isolyr Labs — All rights reserved.</p>
-            <nav class="footer-links">
-                <a href="/terms" class="footer-link">Terms of Service</a>
-                <span class="dot-sep">•</span>
-                <a href="/privacy" class="footer-link">Privacy Policy</a>
-            </nav>
-        </footer>
-        
-    </div>
-    <script src="script.js"></script>
-    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
-</body>
+                <section class="technologies reveal">
+                    <h2>Technologies & Stack</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <i data-feather="code"></i>
+                            </div>
+                            <h3>Java</h3>
+                            <p>Minecraft plugin development with Spigot, Paper, and Folia frameworks.</p>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <i data-feather="message-circle"></i>
+                            </div>
+                            <h3>Discord.js</h3>
+                            <p>Building advanced Discord bots with modern API integration.</p>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-icon">
+                                <i data-feather="package"></i>
+                            </div>
+                            <h3>System Design</h3>
+                            <p>Architecting robust, maintainable systems for long-term use.</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; Isolyr Labs — All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="/terms" class="footer-link">Terms of Service</a>
+                    <span class="dot-sep">•</span>
+                    <a href="/privacy" class="footer-link">Privacy Policy</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="script.js"></script>
+        <script>
+            try {
+                feather.replace();
+            } catch (e) {
+                console.warn("Feather icons load issue:", e);
+            }
+        </script>
+    </body>
 </html>

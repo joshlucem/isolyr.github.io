@@ -9,10 +9,36 @@
   function init() {
     // Header scroll shadow toggle
     const header = document.querySelector('.site-header');
+
+    // Back-to-top control
+    const backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.innerHTML = '↑';
+    document.body.appendChild(backToTop);
+    backToTop.addEventListener('click', ()=>{
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    let lastScrollY = window.scrollY;
     const onScroll = () => {
-      if (!header) return;
-      if (window.scrollY > 8) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
+      if (header) {
+        if (window.scrollY > 8) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+
+        const goingDown = window.scrollY > lastScrollY + 10;
+        const goingUp = window.scrollY < lastScrollY - 10;
+        if (goingDown && window.scrollY > 80) header.classList.add('header-hidden');
+        if (goingUp || window.scrollY < 80) header.classList.remove('header-hidden');
+      }
+
+      if (window.scrollY > 240) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+
+      lastScrollY = window.scrollY;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

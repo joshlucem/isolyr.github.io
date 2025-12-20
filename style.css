@@ -169,6 +169,11 @@ main {
     max-width: 1000px;
     z-index: 100;
     display: flex;
+.site-header.header-hidden {
+    transform: translateY(-110%);
+    opacity: 0.4;
+    pointer-events: none;
+}
     align-items: center;
     justify-content: space-between;
     padding: 12px 20px;
@@ -575,6 +580,41 @@ main {
     border-radius: var(--radius-md);
     margin-bottom: 28px;
     box-shadow: var(--shadow-sm);
+}
+
+/* Back to top control */
+.back-to-top {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--header-bg);
+    backdrop-filter: var(--blur-sm);
+    -webkit-backdrop-filter: var(--blur-sm);
+    box-shadow: var(--shadow-md);
+    color: var(--text);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease;
+    z-index: 12;
+}
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.back-to-top:hover {
+    background: var(--bg-elev);
+    color: var(--accent);
 }
 
 .document section {

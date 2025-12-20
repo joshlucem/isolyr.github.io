@@ -34,13 +34,33 @@
       document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
     }
 
-    // Language switcher
+    // Theme Manager
     (function(){
-      const switcher = document.querySelector('.lang-switcher');
-      if (!switcher) return;
-      const btn = switcher.querySelector('.lang-current');
-      const codeEl = switcher.querySelector('.lang-code');
-      const menu = switcher.querySelector('.lang-menu');
+      const themeKey = 'isolyr_theme';
+      const savedTheme = localStorage.getItem(themeKey) || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+
+      const themeBtns = document.querySelectorAll('.theme-btn');
+      themeBtns.forEach(btn => {
+        if (btn.dataset.theme === savedTheme) {
+          btn.classList.add('active');
+        }
+        btn.addEventListener('click', () => {
+          const theme = btn.dataset.theme;
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem(themeKey, theme);
+          themeBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    })();
+
+    // Settings Menu & Language switcher
+    (function(){
+      const settingsMenu = document.querySelector('.settings-menu');
+      if (!settingsMenu) return;
+      const toggle = settingsMenu.querySelector('.settings-toggle');
+      const dropdown = settingsMenu.querySelector('.settings-dropdown');
 
       const translations = {
         en: {
@@ -181,7 +201,14 @@
           const key = el.getAttribute('data-i18n');
           if (dict[key]) el.textContent = dict[key];
         });
-        if (codeEl) codeEl.textContent = (lang || 'en').toUpperCase();
+        // Mark active language button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
         try { localStorage.setItem('isolyr_lang', lang); } catch {}
       }
 
@@ -200,24 +227,27 @@
       const initial = saved || detectBrowserLanguage();
       applyLanguage(initial);
 
-      if (btn && menu) {
-        btn.addEventListener('click', ()=>{
-          const open = menu.classList.contains('open');
-          menu.classList.toggle('open', !open);
-          btn.setAttribute('aria-expanded', (!open).toString());
+      // Toggle settings dropdown
+      if (toggle && dropdown) {
+        toggle.addEventListener('click', ()=>{
+          const open = dropdown.classList.contains('open');
+          dropdown.classList.toggle('open', !open);
+          toggle.setAttribute('aria-expanded', (!open).toString());
         });
-        menu.addEventListener('click', (e)=>{
-          if (e.target && e.target.matches('[data-lang]')){
+
+        // Language button clicks
+        dropdown.addEventListener('click', (e)=>{
+          if (e.target && e.target.matches('.lang-btn')){
             const lang = e.target.getAttribute('data-lang');
             applyLanguage(lang);
-            menu.classList.remove('open');
-            btn.setAttribute('aria-expanded', 'false');
           }
         });
+
+        // Close on outside click
         document.addEventListener('click', (e)=>{
-          if (!switcher.contains(e.target)){
-            if (menu) menu.classList.remove('open');
-            if (btn) btn.setAttribute('aria-expanded', 'false');
+          if (!settingsMenu.contains(e.target)){
+            if (dropdown) dropdown.classList.remove('open');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
           }
         });
       }

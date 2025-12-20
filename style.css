@@ -173,8 +173,7 @@ main {
 
 .site-nav a:hover { 
     color: var(--accent); 
-    background: rgba(255,59,48,0.06); 
-    transform: translateY(-1px);
+    background: rgba(255,59,48,0.06);
 }
 
 .site-nav a:hover::after { 
@@ -443,7 +442,7 @@ footer p {
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
-    padding: 24px; 
+    padding: 28px; 
     background: var(--bg-elev); 
     border: 1px solid var(--border); 
     border-radius: var(--radius-lg); 
@@ -454,8 +453,8 @@ footer p {
 }
 
 .product-card:hover { 
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md), var(--shadow-glow);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 0 24px rgba(255, 59, 48, 0.08);
     border-color: var(--accent);
 }
 
@@ -547,6 +546,21 @@ footer p {
     background: var(--accent-pressed);
     box-shadow: 0 6px 16px rgba(255, 59, 48, 0.3);
     transform: translateY(-2px);
+}
+
+.product-link:disabled,
+.product-link[disabled] {
+    background: var(--border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 1;
+    box-shadow: none;
+}
+
+.product-link:disabled:hover,
+.product-link[disabled]:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 .product-link svg {
@@ -672,19 +686,21 @@ footer p {
 
 .breadcrumb a:hover {
     color: var(--accent-pressed);
-    transform: translateX(-4px);
 }
 
 /* Product List Page */
 .products-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 24px;
 }
 
 .product-card.large {
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
 }
 
 .product-card.large h2 {
@@ -906,11 +922,32 @@ footer p {
     /* Phone: stack grids to single column */
     .products-index { grid-template-columns: 1fr; }
     .products-grid { grid-template-columns: 1fr; }
+    .products-list { grid-template-columns: 1fr; }
     .members-grid { grid-template-columns: 1fr; }
     /* Phone: tighten card paddings */
     .category-card, .product-card, .card { padding: 18px; }
     /* Phone: make primary actions full-width */
     .discord-button { width: 100%; }
+    /* Phone: disable downloads */
+    a[download],
+    a[href*=".jar"],
+    a[href*="/downloads/"] {
+        pointer-events: none;
+        opacity: 0.5;
+        position: relative;
+    }
+    a[download]::after,
+    a[href*=".jar"]::after,
+    a[href*="/downloads/"]::after {
+        content: "Downloads disabled on mobile";
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        white-space: nowrap;
+    }
 }
 
 /* =====================   Organization members styles

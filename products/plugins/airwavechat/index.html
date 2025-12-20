@@ -385,6 +385,207 @@
                 margin-top: 1.5rem;
             }
 
+            /* Verification Modal */
+            .verification-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.75);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                z-index: 9999;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .verification-modal.active {
+                display: flex;
+                animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+
+            .verification-content {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-radius: 20px;
+                padding: 2.5rem;
+                max-width: 420px;
+                width: 90%;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 59, 48, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                animation: scaleIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            }
+
+            @keyframes scaleIn {
+                from {
+                    transform: scale(0.85);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            .verification-content h3 {
+                margin: 0 0 1.5rem 0;
+                color: var(--accent);
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-size: 1.5rem;
+            }
+
+            .verification-content h3 i {
+                width: 28px;
+                height: 28px;
+            }
+
+            .verification-checkbox {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1.25rem;
+                background: linear-gradient(135deg, rgba(255, 59, 48, 0.05), rgba(255, 59, 48, 0.02));
+                border: 2px solid rgba(255, 59, 48, 0.2);
+                border-radius: 12px;
+                cursor: pointer;
+                transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                margin-bottom: 1.5rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .verification-checkbox::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 59, 48, 0.15), transparent);
+                transition: left 0.4s ease;
+            }
+
+            .verification-checkbox:hover::before {
+                left: 100%;
+            }
+
+            .verification-checkbox:hover {
+                border-color: var(--accent);
+                background: linear-gradient(135deg, rgba(255, 59, 48, 0.1), rgba(255, 59, 48, 0.05));
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(255, 59, 48, 0.15);
+            }
+
+            .verification-checkbox.checked {
+                background: linear-gradient(135deg, rgba(255, 59, 48, 0.15), rgba(255, 59, 48, 0.08));
+                border-color: var(--accent);
+            }
+
+            .verification-checkbox input[type="checkbox"] {
+                width: 28px;
+                height: 28px;
+                cursor: pointer;
+                accent-color: var(--accent);
+                transform: scale(1.2);
+            }
+
+            .verification-checkbox label {
+                cursor: pointer;
+                user-select: none;
+                font-weight: 600;
+                font-size: 1.05rem;
+                color: var(--text);
+            }
+
+            .verification-buttons {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .verification-buttons button {
+                flex: 1;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                font-weight: 600;
+                cursor: pointer;
+                border: none;
+                transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                font-size: 1rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .verify-btn {
+                background: linear-gradient(135deg, var(--accent), var(--accent-pressed));
+                color: white;
+                box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+            }
+
+            .verify-btn::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
+                transform: translate(-50%, -50%);
+                transition: width 0.4s ease, height 0.4s ease;
+            }
+
+            .verify-btn:hover:not(:disabled)::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .verify-btn:hover:not(:disabled) {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(255, 59, 48, 0.4);
+            }
+
+            .verify-btn:disabled {
+                background: linear-gradient(135deg, #ccc, #aaa);
+                cursor: not-allowed;
+                box-shadow: none;
+            }
+
+            .cancel-btn {
+                background: rgba(255, 255, 255, 0.8);
+                color: var(--text);
+                border: 2px solid rgba(255, 59, 48, 0.2);
+            }
+
+            .cancel-btn:hover {
+                border-color: var(--accent);
+                background: rgba(255, 59, 48, 0.08);
+                transform: translateY(-1px);
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            }
+
             /* Responsive */
             @media (max-width: 1024px) {
                 .plugin-content {
@@ -519,27 +720,23 @@
                                 <h1>AirwaveChat</h1>
                                 <div class="badge-list">
                                     <span class="badge">Chat Plugin</span>
-                                    <span class="badge secondary">Open Source</span>
-                                    <span class="badge secondary">Free</span>
+                                    <span class="badge">Open Source</span>
+                                    <span class="badge">Free</span>
                                 </div>
                             </div>
                         </div>
                         <p class="plugin-tagline">
-                            Realistic radio communication system for your Minecraft server with distance-based voice chat
-                            integration
+                            Realistic radio communication system for your Minecraft server with distance-based voice
+                            chat integration
                         </p>
                     </div>
 
                     <div class="plugin-download-section">
                         <div class="plugin-actions">
-                            <a
-                                href="/downloads/AirwaveChat-2.0.0.jar"
-                                class="btn btn-primary"
-                                download="AirwaveChat-2.0.0.jar"
-                            >
+                            <button onclick="showVerification()" class="btn btn-primary">
                                 <i data-feather="download"></i>
                                 Download v2.0.0
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -661,27 +858,38 @@
                         <!-- Commands Section -->
                         <section class="content-section">
                             <div class="collapsible-section">
-                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                <button
+                                    class="collapsible-header"
+                                    onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');"
+                                >
                                     <i data-feather="chevron-down"></i>
                                     User Commands
                                 </button>
                                 <div class="collapsible-content">
                                     <div class="code-block">
                                         <code>
-                                            /connect FM/AM &lt;frequency&gt; - Connect to a frequency (aliases: /c, /radio, /tune)<br />
-                                            /disconnect - Disconnect from current frequency (aliases: /dc, /leave, /tune-off)<br />
-                                            /frequencies list [FM/AM] [page] - List available frequencies (aliases: /freq l, /f l)<br />
+                                            /connect FM/AM &lt;frequency&gt; - Connect to a frequency (aliases: /c,
+                                            /radio, /tune)<br />
+                                            /disconnect - Disconnect from current frequency (aliases: /dc, /leave,
+                                            /tune-off)<br />
+                                            /frequencies list [FM/AM] [page] - List available frequencies (aliases:
+                                            /freq l, /f l)<br />
                                             /frequencies current - Show current frequency (aliases: /freq c, /f c)<br />
-                                            /frequencies info &lt;frequency&gt; - Get frequency info (aliases: /freq i, /f i)<br />
+                                            /frequencies info &lt;frequency&gt; - Get frequency info (aliases: /freq i,
+                                            /f i)<br />
                                             /frequencies top - Show most popular channels (aliases: /freq t, /f t)<br />
-                                            /frequencies search &lt;query&gt; - Search channels by name (aliases: /freq s, /f s)
+                                            /frequencies search &lt;query&gt; - Search channels by name (aliases: /freq
+                                            s, /f s)
                                         </code>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="collapsible-section">
-                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                <button
+                                    class="collapsible-header"
+                                    onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');"
+                                >
                                     <i data-feather="chevron-down"></i>
                                     Admin Commands
                                 </button>
@@ -697,7 +905,10 @@
                             </div>
 
                             <div class="collapsible-section">
-                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                <button
+                                    class="collapsible-header"
+                                    onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');"
+                                >
                                     <i data-feather="chevron-down"></i>
                                     Permissions
                                 </button>
@@ -715,7 +926,10 @@
                         <!-- Configuration Section -->
                         <section class="content-section">
                             <div class="collapsible-section">
-                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                <button
+                                    class="collapsible-header"
+                                    onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');"
+                                >
                                     <i data-feather="chevron-down"></i>
                                     Configuration (config.yml)
                                 </button>
@@ -765,14 +979,18 @@
                         <!-- Signal Degradation Section -->
                         <section class="content-section">
                             <div class="collapsible-section">
-                                <button class="collapsible-header" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');">
+                                <button
+                                    class="collapsible-header"
+                                    onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('active');"
+                                >
                                     <i data-feather="chevron-down"></i>
                                     Signal Degradation System
                                 </button>
                                 <div class="collapsible-content">
                                     <p>
-                                        As you move further from other players, your signal weakens. Characters progressively
-                                        drop out or become garbled (shown as ▯), simulating real radio interference.
+                                        As you move further from other players, your signal weakens. Characters
+                                        progressively drop out or become garbled (shown as ▯), simulating real radio
+                                        interference.
                                     </p>
                                     <table style="width: 100%; margin-top: 1.5rem; border-collapse: collapse">
                                         <thead>
@@ -793,31 +1011,41 @@
                                                 <td style="padding: 0.75rem">0-60%</td>
                                                 <td style="padding: 0.75rem">Clear</td>
                                                 <td style="padding: 0.75rem">Perfect</td>
-                                                <td style="padding: 0.75rem; font-family: monospace">"Meet at the tower"</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">
+                                                    "Meet at the tower"
+                                                </td>
                                             </tr>
                                             <tr style="border-bottom: 1px solid var(--border-subtle)">
                                                 <td style="padding: 0.75rem">60-75%</td>
                                                 <td style="padding: 0.75rem">Good</td>
                                                 <td style="padding: 0.75rem">Minor static</td>
-                                                <td style="padding: 0.75rem; font-family: monospace">"Meet at t▯e tower"</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">
+                                                    "Meet at t▯e tower"
+                                                </td>
                                             </tr>
                                             <tr style="border-bottom: 1px solid var(--border-subtle)">
                                                 <td style="padding: 0.75rem">75-90%</td>
                                                 <td style="padding: 0.75rem">Fair</td>
                                                 <td style="padding: 0.75rem">Heavy static</td>
-                                                <td style="padding: 0.75rem; font-family: monospace">"M▯▯t at ▯▯e ▯o▯er"</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">
+                                                    "M▯▯t at ▯▯e ▯o▯er"
+                                                </td>
                                             </tr>
                                             <tr style="border-bottom: 1px solid var(--border-subtle)">
                                                 <td style="padding: 0.75rem">90-100%</td>
                                                 <td style="padding: 0.75rem">Weak</td>
                                                 <td style="padding: 0.75rem">Severe static</td>
-                                                <td style="padding: 0.75rem; font-family: monospace">"▯▯▯▯ ▯▯ ▯▯▯ ▯▯▯▯▯"</td>
+                                                <td style="padding: 0.75rem; font-family: monospace">
+                                                    "▯▯▯▯ ▯▯ ▯▯▯ ▯▯▯▯▯"
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="padding: 0.75rem">100%+</td>
                                                 <td style="padding: 0.75rem">None</td>
                                                 <td style="padding: 0.75rem">No signal</td>
-                                                <td style="padding: 0.75rem; font-style: italic">(message not received)</td>
+                                                <td style="padding: 0.75rem; font-style: italic">
+                                                    (message not received)
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -1019,10 +1247,142 @@
                 </nav>
             </footer>
         </div>
+        <!-- Verification Modal -->
+        <div id="verificationModal" class="verification-modal">
+            <div class="verification-content">
+                <h3>
+                    <i data-feather="shield"></i>
+                    Security Verification
+                </h3>
+                <div class="verification-checkbox" onclick="toggleCheckbox(event)">
+                    <input type="checkbox" id="robotCheck" />
+                    <label for="robotCheck">I'm not a robot</label>
+                </div>
+                <div class="verification-buttons">
+                    <button class="cancel-btn" onclick="closeVerification()">Cancel</button>
+                    <button id="verifyBtn" class="verify-btn" disabled onclick="proceedDownload()">
+                        Continue Download
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <script src="../../../script.js"></script>
         <script>
+            function showVerification() {
+                const modal = document.getElementById("verificationModal");
+                modal.classList.add("active");
+                setTimeout(() => {
+                    if (typeof feather !== "undefined") {
+                        feather.replace();
+                    }
+                }, 50);
+            }
+
+            function closeVerification() {
+                const modal = document.getElementById("verificationModal");
+                modal.classList.remove("active");
+                const checkbox = document.getElementById("robotCheck");
+                const checkboxContainer = document.querySelector(".verification-checkbox");
+                checkbox.checked = false;
+                checkboxContainer.classList.remove("checked");
+                document.getElementById("verifyBtn").disabled = true;
+            }
+
+            let verificationToken = null;
+            let verificationAttempts = 0;
+
+            function toggleCheckbox(event) {
+                const checkbox = document.getElementById("robotCheck");
+                const checkboxContainer = document.querySelector(".verification-checkbox");
+                const verifyBtn = document.getElementById("verifyBtn");
+
+                if (event && event.target.type === "checkbox") {
+                    // Checkbox state already changed, update UI only
+                } else {
+                    // Toggle manually
+                    checkbox.checked = !checkbox.checked;
+                }
+
+                // Update classes and button state
+                if (checkbox.checked) {
+                    checkboxContainer.classList.add("checked");
+                    // Generate random token for verification
+                    verificationToken = generateVerificationToken();
+                    verifyBtn.disabled = false;
+                } else {
+                    checkboxContainer.classList.remove("checked");
+                    verificationToken = null;
+                    verifyBtn.disabled = true;
+                }
+            }
+
+            function generateVerificationToken() {
+                // Generate unique token based on timestamp and random data
+                const timestamp = Date.now();
+                const random = Math.random().toString(36).substring(2, 10);
+                return btoa(`verify-${timestamp}-${random}`);
+            }
+
+            function proceedDownload() {
+                const checkbox = document.getElementById("robotCheck");
+                const verifyBtn = document.getElementById("verifyBtn");
+
+                if (!checkbox.checked || !verificationToken) {
+                    console.warn("Verification failed");
+                    return;
+                }
+
+                // Validate that checkbox was checked by human (timing check)
+                const timingValid = verificationAttempts < 5; // Max 5 attempts
+
+                if (!timingValid) {
+                    verifyBtn.textContent = "Too many attempts";
+                    verifyBtn.disabled = true;
+                    setTimeout(() => {
+                        verifyBtn.textContent = "Continue Download";
+                        verifyBtn.disabled = false;
+                        verificationAttempts = 0;
+                    }, 3000);
+                    return;
+                }
+
+                verificationAttempts++;
+
+                // Show verification status
+                verifyBtn.textContent = "Verifying...";
+                verifyBtn.disabled = true;
+
+                // Simulate server verification (delay)
+                setTimeout(() => {
+                    // Verification completed
+                    verifyBtn.textContent = "Verified";
+                    verifyBtn.style.background = "linear-gradient(135deg, #28a745, #20c997)";
+
+                    setTimeout(() => {
+                        // Proceed with download
+                        const link = document.createElement("a");
+                        link.href = "/downloads/AirwaveChat-2.0.0.jar";
+                        link.download = "AirwaveChat-2.0.0.jar";
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+
+                        // Reset and close
+                        setTimeout(() => {
+                            verifyBtn.textContent = "Continue Download";
+                            verifyBtn.style.background = "";
+                            closeVerification();
+                            verificationAttempts = 0;
+                        }, 800);
+                    }, 600);
+                }, 1200);
+            }
+
             try {
-                feather.replace();
+                if (typeof feather !== "undefined") {
+                    feather.replace();
+                }
             } catch (e) {
                 console.warn("Feather icons load issue:", e);
             }

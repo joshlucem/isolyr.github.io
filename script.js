@@ -28,11 +28,13 @@
         else header.classList.remove('scrolled');
 
         const delta = y - lastScrollY;
-        const goingDown = delta > 4;
-        const goingUp = delta < -4;
-
-        if (goingDown && y > 80) header.classList.add('header-hidden');
-        if (goingUp || y < 64) header.classList.remove('header-hidden');
+        // Trigger hide cuando baja 3+ px y está por debajo de 60px
+        // Mostrar cuando sube 3+ px o está por encima de 40px
+        if (delta > 3 && y > 60) {
+          header.classList.add('header-hidden');
+        } else if (delta < -3 || y < 40) {
+          header.classList.remove('header-hidden');
+        }
       }
 
       if (y > 240) backToTop.classList.add('visible');

@@ -354,19 +354,82 @@
 
             /* Code Block */
             .code-block {
-                background: var(--bg-primary);
-                border: 1px solid var(--border);
+                background: #f8f9fa;
+                border: 1px solid #e1e4e8;
                 border-radius: 8px;
                 padding: 1.5rem;
                 overflow-x: auto;
                 margin: 0;
             }
 
+            [data-theme="dark"] .code-block {
+                background: #1e1e1e;
+                border-color: #3a3a3a;
+            }
+
             .code-block code {
-                font-family: "Courier New", monospace;
-                color: var(--accent);
+                font-family: "Consolas", "Monaco", "Courier New", monospace;
                 font-size: 0.9rem;
-                line-height: 1.5;
+                line-height: 1.6;
+                color: #24292e;
+            }
+
+            [data-theme="dark"] .code-block code {
+                color: #e1e4e8;
+            }
+
+            /* YAML Syntax Highlighting */
+            .code-block.yaml {
+                background: #f6f8fa;
+                border-left: 3px solid #0969da;
+            }
+
+            [data-theme="dark"] .code-block.yaml {
+                background: #161b22;
+                border-left-color: #58a6ff;
+            }
+
+            .code-block.yaml .yaml-key {
+                color: #0969da;
+                font-weight: 600;
+            }
+
+            [data-theme="dark"] .code-block.yaml .yaml-key {
+                color: #79c0ff;
+            }
+
+            .code-block.yaml .yaml-string {
+                color: #0a3069;
+            }
+
+            [data-theme="dark"] .code-block.yaml .yaml-string {
+                color: #a5d6ff;
+            }
+
+            .code-block.yaml .yaml-number {
+                color: #cf222e;
+            }
+
+            [data-theme="dark"] .code-block.yaml .yaml-number {
+                color: #ffa657;
+            }
+
+            .code-block.yaml .yaml-boolean {
+                color: #8250df;
+                font-weight: 600;
+            }
+
+            [data-theme="dark"] .code-block.yaml .yaml-boolean {
+                color: #d2a8ff;
+            }
+
+            .code-block.yaml .yaml-comment {
+                color: #6e7781;
+                font-style: italic;
+            }
+
+            [data-theme="dark"] .code-block.yaml .yaml-comment {
+                color: #8b949e;
             }
 
             .code-block h3 {
@@ -768,6 +831,14 @@
                         </div>
                         <div class="settings-divider"></div>
                         <div class="settings-section">
+                            <div class="settings-label">Animations</div>
+                            <div class="fx-options">
+                                <button class="fx-btn" data-anim="on" role="menuitem">On</button>
+                                <button class="fx-btn" data-anim="off" role="menuitem">Off</button>
+                            </div>
+                        </div>
+                        <div class="settings-divider"></div>
+                        <div class="settings-section">
                             <div class="settings-label">Language (BETA)</div>
                             <div class="lang-options">
                                 <button class="lang-btn" data-lang="en" role="menuitem">English</button>
@@ -1011,38 +1082,38 @@
                                 </button>
                                 <div class="collapsible-content">
                                     <p>AirwaveChat comes with extensive configuration options:</p>
-                                    <div class="code-block">
+                                    <div class="code-block yaml">
                                         <code>
-                                            frequencies:<br />
-                                            &nbsp;&nbsp;fm:<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;min: 100.0<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;max: 199.9<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;step: 0.1<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 40.0<br />
-                                            &nbsp;&nbsp;am:<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;min: 1000<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;max: 1999<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;step: 1<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 100.0<br />
-                                            &nbsp;&nbsp;custom:<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;Police:<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: "FM"<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frequency: 123.5<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 60.0<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;Emergency:<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type: "AM"<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frequency: 1050<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chat_distance: 150.0<br />
-                                            <br />
-                                            options:<br />
-                                            &nbsp;&nbsp;enable_proximity: true<br />
-                                            &nbsp;&nbsp;enable_static: true<br />
-                                            &nbsp;&nbsp;static_threshold: 0.75<br />
-                                            &nbsp;&nbsp;static_intensity: 0.5<br />
-                                            &nbsp;&nbsp;enable_signal_bar: true<br />
-                                            &nbsp;&nbsp;enable_sounds: true<br />
-                                            &nbsp;&nbsp;cooldown_connect: 2<br />
-                                            &nbsp;&nbsp;cooldown_disconnect: 2
+<span class="yaml-key">frequencies</span>:<br />
+&nbsp;&nbsp;<span class="yaml-key">fm</span>:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">min</span>: <span class="yaml-number">100.0</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">max</span>: <span class="yaml-number">199.9</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">step</span>: <span class="yaml-number">0.1</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">chat_distance</span>: <span class="yaml-number">40.0</span><br />
+&nbsp;&nbsp;<span class="yaml-key">am</span>:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">min</span>: <span class="yaml-number">1000</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">max</span>: <span class="yaml-number">1999</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">step</span>: <span class="yaml-number">1</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">chat_distance</span>: <span class="yaml-number">100.0</span><br />
+&nbsp;&nbsp;<span class="yaml-key">custom</span>:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">Police</span>:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">type</span>: <span class="yaml-string">"FM"</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">frequency</span>: <span class="yaml-number">123.5</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">chat_distance</span>: <span class="yaml-number">60.0</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">Emergency</span>:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">type</span>: <span class="yaml-string">"AM"</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">frequency</span>: <span class="yaml-number">1050</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yaml-key">chat_distance</span>: <span class="yaml-number">150.0</span><br />
+<br />
+<span class="yaml-key">options</span>:<br />
+&nbsp;&nbsp;<span class="yaml-key">enable_proximity</span>: <span class="yaml-boolean">true</span><br />
+&nbsp;&nbsp;<span class="yaml-key">enable_static</span>: <span class="yaml-boolean">true</span><br />
+&nbsp;&nbsp;<span class="yaml-key">static_threshold</span>: <span class="yaml-number">0.75</span><br />
+&nbsp;&nbsp;<span class="yaml-key">static_intensity</span>: <span class="yaml-number">0.5</span><br />
+&nbsp;&nbsp;<span class="yaml-key">enable_signal_bar</span>: <span class="yaml-boolean">true</span><br />
+&nbsp;&nbsp;<span class="yaml-key">enable_sounds</span>: <span class="yaml-boolean">true</span><br />
+&nbsp;&nbsp;<span class="yaml-key">cooldown_connect</span>: <span class="yaml-number">2</span><br />
+&nbsp;&nbsp;<span class="yaml-key">cooldown_disconnect</span>: <span class="yaml-number">2</span>
                                         </code>
                                     </div>
                                     <p style="margin-top: 1rem">
@@ -1253,28 +1324,6 @@
 
                     <!-- Sidebar -->
                     <aside class="sidebar">
-                        <div class="info-card">
-                            <h3>
-                                <i data-feather="info"></i>
-                                Plugin Information
-                            </h3>
-                            <div class="info-row">
-                                <span class="info-label">Current Version</span>
-                                <span class="info-value">2.0.0</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Status</span>
-                                <span class="info-value">Stable</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Last Update</span>
-                                <span class="info-value">Dec 20, 2025</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">File Size</span>
-                                <span class="info-value">40 KB</span>
-                            </div>
-                        </div>
 
                         <div class="info-card">
                             <h3>
@@ -1298,11 +1347,12 @@
                         <div class="info-card">
                             <h3>
                                 <i data-feather="user"></i>
-                                Developer
+                                Developer(s)
                             </h3>
-                            <div style="text-align: center; padding: 1rem 0">
-                                <div style="font-weight: 600; margin-bottom: 0.5rem">Josh Lucem</div>
+                            <div class="info-row">
+                                <span class="info-label">Author</span>
                                 <a
+                                    class="info-value"
                                     href="/organization#joshlucem"
                                     style="color: var(--accent-primary); text-decoration: none"
                                 >

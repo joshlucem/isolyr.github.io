@@ -28,11 +28,11 @@
         else header.classList.remove('scrolled');
 
         const delta = y - lastScrollY;
-        const goingDown = delta > 12;
-        const goingUp = delta < -12;
+        const goingDown = delta > 4;
+        const goingUp = delta < -4;
 
-        if (goingDown && y > 120) header.classList.add('header-hidden');
-        if (goingUp || y < 100) header.classList.remove('header-hidden');
+        if (goingDown && y > 80) header.classList.add('header-hidden');
+        if (goingUp || y < 64) header.classList.remove('header-hidden');
       }
 
       if (y > 240) backToTop.classList.add('visible');

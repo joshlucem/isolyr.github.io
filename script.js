@@ -227,6 +227,23 @@
       const initial = saved || detectBrowserLanguage();
       applyLanguage(initial);
 
+      // Animations (fireflies) toggle
+      const fxKey = 'isolyr_fx';
+      const savedFx = (function(){ try { return localStorage.getItem(fxKey); } catch { return null; } })() || 'on';
+      document.documentElement.setAttribute('data-fx', savedFx);
+      const fxBtns = dropdown ? dropdown.querySelectorAll('.fx-btn') : [];
+      fxBtns.forEach(btn => {
+        if (btn.dataset.anim === savedFx) btn.classList.add('active');
+        btn.addEventListener('click', ()=>{
+          const state = btn.dataset.anim;
+          document.documentElement.setAttribute('data-fx', state);
+          try { localStorage.setItem(fxKey, state); } catch {}
+          fxBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          window.dispatchEvent(new CustomEvent('fx-toggle', { detail: state }));
+        });
+      });
+
       // Toggle settings dropdown
       if (toggle && dropdown) {
         toggle.addEventListener('click', ()=>{
@@ -254,5 +271,79 @@
     })();
 
     // Fireflies effect removed
+
+    // Firefly animation for hero (respects animations toggle)
+    (function(){
+      const hero = document.querySelector('.hero-section');
+      if (!hero) return;
+      const layer = hero.querySelector('.firefly-layer') || (function(){
+        const l = document.createElement('div');
+        l.className = 'firefly-layer';
+        hero.insertBefore(l, hero.firstChild);
+        return l;
+      })();
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const FIREFLY_COUNT = prefersReducedMotion ? 8 : 25;
+
+      function rand(min, max){ return Math.random() * (max - min) + min; }
+
+      function buildFireflies(){
+        const fxEnabled = (document.documentElement.getAttribute('data-fx') || 'on') === 'on';
+        while (layer.firstChild) layer.removeChild(layer.firstChild);
+        if (!fxEnabled) return;
+
+        for (let i = 0; i < FIREFLY_COUNT; i++){
+          const f = document.createElement('div');
+          f.className = 'firefly';
+          
+          const size = rand(2, 5);
+          const duration = rand(12, 20);
+          const delay = rand(-duration, 0);
+          
+          let startX, startY;
+          const avoidCenterZone = Math.random() > 0.5;
+          
+          if (avoidCenterZone) {
+            if (Math.random() > 0.5) {
+              startX = rand(0, 100);
+              startY = Math.random() > 0.5 ? rand(0, 20) : rand(80, 100);
+            } else {
+              startX = Math.random() > 0.5 ? rand(0, 25) : rand(75, 100);
+              startY = rand(0, 100);
+            }
+          } else {
+            startX = rand(0, 100);
+            startY = rand(0, 100);
+          }
+          
+          const endX = startX + rand(-15, 15);
+          const endY = startY + rand(-15, 15);
+          
+          f.style.width = size + 'px';
+          f.style.height = size + 'px';
+          f.style.left = startX + '%';
+          f.style.top = startY + '%';
+          f.style.setProperty('--start-x', '0px');
+          f.style.setProperty('--start-y', '0px');
+          f.style.setProperty('--end-x', (endX - startX) + '%');
+          f.style.setProperty('--end-y', (endY - startY) + '%');
+          f.style.animationDuration = duration + 's';
+          f.style.animationDelay = delay + 's';
+
+          layer.appendChild(f);
+        }
+      }
+
+      buildFireflies();
+      window.addEventListener('fx-toggle', buildFireflies);
+
+      // Recompute on resize (debounced)
+      let t = null;
+      window.addEventListener('resize', ()=>{
+        clearTimeout(t);
+        t = setTimeout(buildFireflies, 200);
+      }, { passive: true });
+    })();
   }
 })();

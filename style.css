@@ -1,5 +1,12 @@
 /* Design tokens */
 :root {
+        /* Firefly animation colors (light) - subtle red tones */
+        --firefly-color: rgba(220, 38, 38, 0.5);
+        --firefly-highlight: rgba(248, 113, 113, 0.8);
+        --firefly-shadow: rgba(153, 27, 27, 0.3);
+        --firefly-glow: rgba(220, 38, 38, 0.35);
+        --firefly-pulse-min: 0.3;
+        --firefly-pulse-max: 0.7;
     --bg: #f6f8fa;
     --bg-elev: rgba(255, 255, 255, 0.7);
     --text: #24292f;
@@ -35,6 +42,13 @@
 
 /* Dark mode tokens */
 [data-theme="dark"] {
+            /* Firefly animation colors (dark) - bright light red */
+            --firefly-color: rgba(252, 165, 165, 0.7);
+            --firefly-highlight: rgba(254, 202, 202, 0.95);
+            --firefly-shadow: rgba(220, 38, 38, 0.5);
+            --firefly-glow: rgba(252, 165, 165, 0.8);
+            --firefly-pulse-min: 0.4;
+            --firefly-pulse-max: 0.9;
         --blur-sm: saturate(180%) blur(12px);
     --bg: #0d1117;
     --bg-elev: rgba(22, 27, 34, 0.9);
@@ -316,6 +330,32 @@ main {
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+/* Animation Options */
+.fx-options {
+    display: flex;
+    gap: 6px;
+}
+.fx-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    font-size: 0.85rem;
+}
+.fx-btn:hover {
+    background: var(--bg);
+    border-color: var(--accent);
+}
+.fx-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
 }
 .lang-btn {
     display: block;
@@ -1582,9 +1622,66 @@ footer p {
     z-index: 0;
 }
 
+/* Firefly background layer */
+.firefly-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.firefly {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--firefly-highlight) 0%, var(--firefly-color) 30%, transparent 70%);
+    box-shadow: 
+        0 0 6px var(--firefly-glow),
+        0 0 12px var(--firefly-glow),
+        0 0 18px var(--firefly-color),
+        inset 0 0 4px var(--firefly-highlight);
+    will-change: transform, opacity;
+    animation: fireflyFloat 25s ease-in-out infinite;
+    filter: blur(0.5px) brightness(1.3);
+}
+
+@keyframes fireflyFloat {
+    0% {
+        transform: translate(var(--start-x, 0), var(--start-y, 0)) scale(0);
+        opacity: 0;
+    }
+    15% {
+        opacity: var(--firefly-pulse-max);
+        transform: translate(var(--start-x, 0), var(--start-y, 0)) scale(1);
+    }
+    30% {
+        opacity: var(--firefly-pulse-min);
+    }
+    45% {
+        opacity: var(--firefly-pulse-max);
+    }
+    60% {
+        opacity: var(--firefly-pulse-min);
+    }
+    75% {
+        opacity: var(--firefly-pulse-max);
+    }
+    85% {
+        opacity: var(--firefly-pulse-max);
+        transform: translate(var(--end-x, 0), var(--end-y, 0)) scale(1);
+    }
+    100% {
+        transform: translate(var(--end-x, 0), var(--end-y, 0)) scale(0);
+        opacity: 0;
+    }
+}
+
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     max-width: 700px;
     padding: 40px 20px;

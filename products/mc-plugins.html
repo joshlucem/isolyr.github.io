@@ -1,124 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Plugins - Isolyr Labs</title>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="site-header">
-            <div class="brand">Isolyr Labs</div>
-            <nav class="site-nav">
-                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
-                <a href="/products" class="active"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
-                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
-                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
-            </nav>
-            <div class="header-actions">
-                <div class="lang-switcher" aria-label="Language">
-                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
-                    <div class="lang-menu" role="menu">
-                        <button data-lang="en" role="menuitem">EN</button>
-                        <button data-lang="es" role="menuitem">ES</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Minecraft Plugins - Isolyr Labs</title>
+        <link rel="stylesheet" href="../style.css" />
+        <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="site-header">
+                <div class="brand">Isolyr Labs</div>
+                <nav class="site-nav">
+                    <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                    <a href="/products" class="active"
+                        ><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a
+                    >
+                    <a href="/organization"
+                        ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
+                    >
+                    <a href="/contact"
+                        ><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a
+                    >
+                </nav>
+                <div class="header-actions">
+                    <div class="lang-switcher" aria-label="Language">
+                        <button class="lang-current" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="globe"></i><span class="lang-code">EN</span>
+                        </button>
+                        <div class="lang-menu" role="menu">
+                            <button data-lang="en" role="menuitem">EN</button>
+                            <button data-lang="es" role="menuitem">ES</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <header class="reveal visible">
+                <h1 data-i18n="mc_title">Minecraft Plugins</h1>
+                <p class="subtitle" data-i18n="mc_subtitle">Minecraft server plugins and tools.</p>
+            </header>
+
+            <main class="document reveal">
+                <div class="breadcrumb">
+                    <a href="/products" data-i18n="breadcrumb_back">← Back to Products</a>
+                </div>
+
+                <section class="products-list">
+                    <div class="product-card large">
+                        <div class="product-icon">
+                            <i data-feather="rss"></i>
+                        </div>
+                        <h2>AirwaveChat</h2>
+                        <p class="product-tagline" data-i18n="airwavechat_tagline">
+                            Realistic radio communication for your Minecraft server
+                        </p>
+                        <div class="product-description">
+                            <h3>Requirements</h3>
+                            <p>Paper/Spigot/Folia 1.20.4+ • Java 17+ (21 recommended)</p>
+                        </div>
+
+                        <div class="product-details">
+                            <span class="badge">Chat</span>
+                            <span class="badge">Communication</span>
+                            <span class="badge">Roleplay</span>
+                            <span class="badge">Privacy</span>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; padding-top: 1rem;">
+                            <a
+                                href="/products/plugins/airwavechat"
+                                class="product-link"
+                            >
+                                <span data-i18n="product_learn_more">Learn More</span>
+                                <i data-feather="arrow-right"></i>
+                            </a>
+                            <a
+                                href="https://www.spigotmc.org/resources/airwavechat.130344/"
+                                target="_blank"
+                                class="product-link"
+                            >
+                                <span>View on Spigot</span>
+                                <i data-feather="external-link"></i>
+                            </a>
+                        </div>
+
+                        <div class="product-author">
+                            <span class="author-label">Developer:</span>
+                            <a class="author-name" href="/organization#joshlucem">@joshlucem</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card large">
+                        <div class="product-icon">
+                            <i data-feather="map-pin"></i>
+                        </div>
+                        <h2>PlayerWaypoints</h2>
+                        <p class="product-tagline">
+                            Advanced waypoint system for player navigation and location management
+                        </p>
+                        <div class="product-description">
+                            <h3>Coming Soon</h3>
+                            <p>Currently in development • Stay tuned for updates</p>
+                        </div>
+
+                        <div class="product-details">
+                            <span class="badge">Navigation</span>
+                            <span class="badge">Utilities</span>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: auto; padding-top: 1rem;">
+                            <button
+                                class="product-link"
+                                disabled
+                            >
+                                <span>In Development</span>
+                                <i data-feather="clock"></i>
+                            </button>
+                        </div>
+
+                        <div class="product-author">
+                            <span class="author-label">Developer:</span>
+                            <a class="author-name" href="/organization#joshlucem">@joshlucem</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; Isolyr Labs — All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="/terms" class="footer-link">Terms of Service</a>
+                    <span class="dot-sep">•</span>
+                    <a href="/privacy" class="footer-link">Privacy Policy</a>
+                </nav>
+            </footer>
         </div>
-
-        <header class="reveal visible">
-            <h1 data-i18n="mc_title">Minecraft Plugins</h1>
-            <p class="subtitle" data-i18n="mc_subtitle">Minecraft server plugins and tools.</p>
-        </header>
-
-        <main class="document reveal">
-            <div class="breadcrumb">
-                <a href="/products" data-i18n="breadcrumb_back">← Back to Products</a>
-            </div>
-
-            <section class="products-list">
-                <div class="product-card large">
-                    <div class="product-icon">
-                        <i data-feather="rss"></i>
-                    </div>
-                    <h2>AirwaveChat</h2>
-                    <p class="product-tagline" data-i18n="airwavechat_tagline">Realistic radio communication for your Minecraft server</p>
-                    
-                    <div class="product-description">
-                        <h3 data-i18n="airwavechat_features_title">Features</h3>
-                        
-                        <h4>Frequency System</h4>
-                        <ul>
-                            <li><strong>AM Band:</strong> 1000–1999 kHz (≈100 block range)</li>
-                            <li><strong>FM Band:</strong> 100.0–199.9 MHz (≈40 block range)</li>
-                            <li><strong>Custom Channels:</strong> Create named frequencies with custom ranges</li>
-                            <li><strong>1000+ Available Frequencies:</strong> Plenty of channels for your players</li>
-                        </ul>
-
-                        <h4>Realistic Radio Effects</h4>
-                        <ul>
-                            <li><strong>Proximity Chat:</strong> Messages reach players within range only</li>
-                            <li><strong>Signal Degradation:</strong> Text distorts with static at distance</li>
-                            <li><strong>Live Signal Bar:</strong> Real-time strength indicator in the action bar</li>
-                            <li><strong>Radio Sounds:</strong> Authentic connect / disconnect / static audio</li>
-                        </ul>
-
-                        <h4>Player Experience</h4>
-                        <ul>
-                            <li><strong>Persistent Connections:</strong> Auto-reconnect to your last frequency on login</li>
-                            <li><strong>Frequency Search:</strong> Find channels by name quickly</li>
-                            <li><strong>Top Channels:</strong> See most popular frequencies</li>
-                            <li><strong>Smart Pagination:</strong> Browse frequency lists with ease</li>
-                        </ul>
-
-                        <h4>Customization</h4>
-                        <ul>
-                            <li><strong>MiniMessage Support:</strong> Rich text formatting with hex colors</li>
-                            <li><strong>Configurable Distances:</strong> Adjust range per band</li>
-                            <li><strong>Static Control:</strong> Fine-tune distortion threshold and intensity</li>
-                            <li><strong>Sound Options:</strong> Choose and toggle sound effects</li>
-                            <li><strong>Cooldown System:</strong> Prevent command spam</li>
-                        </ul>
-
-                        <h3>Use Cases</h3>
-                        <p><strong>Roleplay Servers:</strong> Police, EMS, and civilian channels<br>
-                        <strong>Survival:</strong> Coordinate with your team across distances<br>
-                        <strong>PvP:</strong> Strategic team communication<br>
-                        <strong>Minigames:</strong> Team-based modes with radio coordination</p>
-
-                        <h3>Requirements</h3>
-                        <p>Paper/Spigot/Folia 1.20.4+ • Java 21+</p>
-                    </div>
-                    
-                    <div class="product-details">
-                        <span class="badge">Spigot Plugin</span>
-                        <span class="badge">Active</span>
-                    </div>
-                    <a href="https://www.spigotmc.org/resources/airwavechat.130344/" target="_blank" class="product-link">
-                        <span>View on SpigotMC</span>
-                        <i data-feather="external-link"></i>
-                    </a>
-                    
-                    <div class="product-author">
-                        <span class="author-label">Developer:</span>
-                        <a class="author-name" href="/organization#joshlucem">@joshlucem</a>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; Isolyr Labs — All rights reserved.</p>
-            <nav class="footer-links">
-                <a href="/terms" class="footer-link">Terms of Service</a>
-                <span class="dot-sep">•</span>
-                <a href="/privacy" class="footer-link">Privacy Policy</a>
-            </nav>
-        </footer>
-    </div>
-    <script src="../script.js"></script>
-    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
-</body>
+        <script src="../script.js"></script>
+        <script>
+            try {
+                feather.replace();
+            } catch (e) {
+                console.warn("Feather icons load issue:", e);
+            }
+        </script>
+    </body>
 </html>

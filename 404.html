@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>404 – Isolyr Labs</title>
         <meta property="og:title" content="404 – Isolyr Labs" />
         <meta property="og:description" content="The page you’re looking for isn’t here. Return to Isolyr Labs home." />
@@ -11,54 +11,69 @@
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="404 – Isolyr Labs" />
-        <meta name="twitter:description" content="The page you’re looking for isn’t here. Return to Isolyr Labs home." />
+        <meta
+            name="twitter:description"
+            content="The page you’re looking for isn’t here. Return to Isolyr Labs home."
+        />
         <meta name="twitter:image" content="https://isolyr.xyz/assets/og-default.png" />
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="site-header">
-            <div class="brand">Isolyr Labs</div>
-            <nav class="site-nav">
-                <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
-                <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
-                <a href="/organization"><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a>
-                <a href="/contact"><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a>
-            </nav>
-            <div class="header-actions">
-                <div class="lang-switcher" aria-label="Language">
-                    <button class="lang-current" aria-haspopup="true" aria-expanded="false"><i data-feather="globe"></i><span class="lang-code">EN</span></button>
-                    <div class="lang-menu" role="menu">
-                        <button data-lang="en" role="menuitem">EN</button>
-                        <button data-lang="es" role="menuitem">ES</button>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="site-header">
+                <div class="brand">Isolyr Labs</div>
+                <nav class="site-nav">
+                    <a href="/"><i data-feather="home"></i><span data-i18n="nav_home">Home</span></a>
+                    <a href="/products"><i data-feather="package"></i><span data-i18n="nav_products">Products</span></a>
+                    <a href="/organization"
+                        ><i data-feather="grid"></i><span data-i18n="nav_organization">Organization</span></a
+                    >
+                    <a href="/contact"
+                        ><i data-feather="message-circle"></i><span data-i18n="nav_contact">Contact</span></a
+                    >
+                </nav>
+                <div class="header-actions">
+                    <div class="lang-switcher" aria-label="Language">
+                        <button class="lang-current" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="globe"></i><span class="lang-code">EN</span>
+                        </button>
+                        <div class="lang-menu" role="menu">
+                            <button data-lang="en" role="menuitem">EN</button>
+                            <button data-lang="es" role="menuitem">ES</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <header class="reveal visible">
+                <h1 data-i18n="404_title">404 — Page not found</h1>
+                <p class="subtitle" data-i18n="404_subtitle">This page does not exist.</p>
+            </header>
+
+            <main class="document reveal">
+                <section class="reveal">
+                    <p data-i18n="404_body">This page does not exist. It may have been moved or removed.</p>
+                    <p><a class="primary-link" href="/" data-i18n="404_back">Back to Isolyr Labs</a></p>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; Isolyr Labs — All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="/terms" class="footer-link">Terms of Service</a>
+                    <span class="dot-sep">•</span>
+                    <a href="/privacy" class="footer-link">Privacy Policy</a>
+                </nav>
+            </footer>
         </div>
-
-        <header class="reveal visible">
-            <h1 data-i18n="404_title">404 — Page not found</h1>
-            <p class="subtitle" data-i18n="404_subtitle">This page does not exist.</p>
-        </header>
-
-        <main class="document reveal">
-            <section class="reveal">
-                <p data-i18n="404_body">This page does not exist. It may have been moved or removed.</p>
-                <p><a class="primary-link" href="/" data-i18n="404_back">Back to Isolyr Labs</a></p>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; Isolyr Labs — All rights reserved.</p>
-            <nav class="footer-links">
-                <a href="/terms" class="footer-link">Terms of Service</a>
-                <span class="dot-sep">•</span>
-                <a href="/privacy" class="footer-link">Privacy Policy</a>
-            </nav>
-        </footer>
-    </div>
-    <script src="script.js"></script>
-    <script>try { feather.replace(); } catch (e) { console.warn('Feather icons load issue:', e); }</script>
-</body>
+        <script src="script.js"></script>
+        <script>
+            try {
+                feather.replace();
+            } catch (e) {
+                console.warn("Feather icons load issue:", e);
+            }
+        </script>
+    </body>
 </html>

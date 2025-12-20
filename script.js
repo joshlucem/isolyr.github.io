@@ -22,23 +22,23 @@
 
     let lastScrollY = window.scrollY;
     const onScroll = () => {
+      const y = window.scrollY;
       if (header) {
-        if (window.scrollY > 8) header.classList.add('scrolled');
+        if (y > 8) header.classList.add('scrolled');
         else header.classList.remove('scrolled');
 
-        const goingDown = window.scrollY > lastScrollY + 10;
-        const goingUp = window.scrollY < lastScrollY - 10;
-        if (goingDown && window.scrollY > 80) header.classList.add('header-hidden');
-        if (goingUp || window.scrollY < 80) header.classList.remove('header-hidden');
+        const delta = y - lastScrollY;
+        const goingDown = delta > 12;
+        const goingUp = delta < -12;
+
+        if (goingDown && y > 120) header.classList.add('header-hidden');
+        if (goingUp || y < 100) header.classList.remove('header-hidden');
       }
 
-      if (window.scrollY > 240) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
+      if (y > 240) backToTop.classList.add('visible');
+      else backToTop.classList.remove('visible');
 
-      lastScrollY = window.scrollY;
+      lastScrollY = y;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

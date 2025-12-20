@@ -181,8 +181,8 @@ main {
     animation: slideDown 0.5s ease;
 }
 .site-header.header-hidden {
-    transform: translate(-50%, -120%);
-    opacity: 0.4;
+    transform: translate(-50%, -220%);
+    opacity: 0;
     pointer-events: none;
 }
 .site-header.scrolled {
